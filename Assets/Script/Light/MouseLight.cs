@@ -9,7 +9,7 @@ public class MouseLight : MonoBehaviour {
     private Vector3 lightPosition;
     private Vector3 rockPosition;
     [SerializeField]
-    private float dis = 5f;
+    private float dis = 6.2f;
     private int limit = 0;
     // Use this for initialization
     void Start () {
