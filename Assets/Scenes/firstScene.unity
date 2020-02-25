@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 43966811}
   m_Layer: 0
   m_Name: rock32
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,7 +144,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -185,8 +185,8 @@ Transform:
   m_LocalPosition: {x: 0.8985509, y: 0.18249166, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 15
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &85531144
 GameObject:
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 85531145}
   m_Layer: 0
   m_Name: rock30
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,7 +219,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -260,8 +260,8 @@ Transform:
   m_LocalPosition: {x: 2.2914014, y: 0.78117085, z: 0.014831412}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 14
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &176095781
 GameObject:
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 256049587}
   m_Layer: 9
   m_Name: rock4
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -371,7 +371,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -412,8 +412,8 @@ Transform:
   m_LocalPosition: {x: -5.9120054, y: 5.73, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 2
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &259312135
 GameObject:
@@ -442,7 +442,7 @@ Transform:
   m_LocalScale: {x: 0.93, y: 0.93, z: 1}
   m_Children: []
   m_Father: {fileID: 452703829}
-  m_RootOrder: 19
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &259312137
 SpriteRenderer:
@@ -459,7 +459,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -516,8 +516,8 @@ Transform:
   m_LocalPosition: {x: 7.1714015, y: 2.9211707, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 25
+  m_Father: {fileID: 1131893830}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &283680367
 SpriteRenderer:
@@ -534,7 +534,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 407648044}
   m_Layer: 0
   m_Name: rock19
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -596,7 +596,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -637,8 +637,8 @@ Transform:
   m_LocalPosition: {x: -5.758599, y: 0.0811708, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 7
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &416115719
 GameObject:
@@ -649,9 +649,10 @@ GameObject:
   m_Component:
   - component: {fileID: 416115720}
   - component: {fileID: 416115721}
+  - component: {fileID: 416115722}
   m_Layer: 0
   m_Name: rock11
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -666,8 +667,8 @@ Transform:
   m_LocalPosition: {x: 1.6571352, y: 2.7831757, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 32
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &416115721
 SpriteRenderer:
@@ -684,7 +685,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -715,6 +716,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &416115722
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416115719}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.01, y: 3.41}
+    newSize: {x: 4.01, y: 3.41}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.01, y: 3.41}
+  m_EdgeRadius: 0
 --- !u!1 &421396908
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,7 +752,7 @@ GameObject:
   - component: {fileID: 421396909}
   m_Layer: 0
   m_Name: rock15
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -746,7 +772,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -787,8 +813,8 @@ Transform:
   m_LocalPosition: {x: -1.2285986, y: -0.19882905, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 10
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &425780791
 GameObject:
@@ -801,7 +827,7 @@ GameObject:
   - component: {fileID: 425780793}
   m_Layer: 0
   m_Name: rock28
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -816,8 +842,8 @@ Transform:
   m_LocalPosition: {x: -2.6885986, y: 6.451171, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 21
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &425780793
 SpriteRenderer:
@@ -834,7 +860,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -891,38 +917,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1150399569}
-  - {fileID: 1493928699}
-  - {fileID: 256049588}
-  - {fileID: 547345792}
-  - {fileID: 1494438938}
-  - {fileID: 738180137}
-  - {fileID: 1298945006}
-  - {fileID: 407648045}
-  - {fileID: 1229421349}
-  - {fileID: 933903351}
-  - {fileID: 421396910}
-  - {fileID: 1419417711}
-  - {fileID: 561723691}
-  - {fileID: 1155405953}
-  - {fileID: 85531146}
-  - {fileID: 43966812}
-  - {fileID: 730450214}
-  - {fileID: 1101010114}
-  - {fileID: 1583037292}
   - {fileID: 259312136}
-  - {fileID: 1770895603}
-  - {fileID: 425780792}
-  - {fileID: 1294930442}
-  - {fileID: 874135717}
-  - {fileID: 886610106}
-  - {fileID: 283680366}
-  - {fileID: 814295223}
-  - {fileID: 916901019}
-  - {fileID: 852678874}
-  - {fileID: 1091320236}
-  - {fileID: 540332980}
-  - {fileID: 967289580}
-  - {fileID: 416115720}
+  - {fileID: 1574136214}
+  - {fileID: 1131893830}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -937,7 +934,7 @@ GameObject:
   - component: {fileID: 540332981}
   m_Layer: 0
   m_Name: rock19 (2)
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -952,8 +949,8 @@ Transform:
   m_LocalPosition: {x: -0.29989183, y: 2.7831757, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 30
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &540332981
 SpriteRenderer:
@@ -970,7 +967,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1012,7 +1009,7 @@ GameObject:
   - component: {fileID: 547345791}
   m_Layer: 9
   m_Name: rock7
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1032,7 +1029,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1073,8 +1070,8 @@ Transform:
   m_LocalPosition: {x: -6.9985986, y: 0.31361878, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 3
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &561723689
 GameObject:
@@ -1087,7 +1084,7 @@ GameObject:
   - component: {fileID: 561723690}
   m_Layer: 0
   m_Name: rock03
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1107,7 +1104,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1148,8 +1145,8 @@ Transform:
   m_LocalPosition: {x: 7.9114013, y: -1.9388291, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 12
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &730450212
 GameObject:
@@ -1162,7 +1159,7 @@ GameObject:
   - component: {fileID: 730450213}
   m_Layer: 0
   m_Name: rock31
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1182,7 +1179,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1223,8 +1220,8 @@ Transform:
   m_LocalPosition: {x: 2.6914015, y: -1.4290234, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 16
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &738180135
 GameObject:
@@ -1257,7 +1254,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1298,8 +1295,8 @@ Transform:
   m_LocalPosition: {x: -4.2685986, y: 1.1711708, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 5
+  m_Father: {fileID: 1131893830}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &814295222
 GameObject:
@@ -1312,7 +1309,7 @@ GameObject:
   - component: {fileID: 814295224}
   m_Layer: 0
   m_Name: rock21
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1327,8 +1324,8 @@ Transform:
   m_LocalPosition: {x: 6.1814013, y: 0.6811708, z: 0.014831412}
   m_LocalScale: {x: 0.9, y: 0.8, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 26
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &814295224
 SpriteRenderer:
@@ -1345,7 +1342,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1387,7 +1384,7 @@ GameObject:
   - component: {fileID: 852678875}
   m_Layer: 0
   m_Name: rock19 (1)
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1402,8 +1399,8 @@ Transform:
   m_LocalPosition: {x: 4.997856, y: 2.9855309, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 28
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &852678875
 SpriteRenderer:
@@ -1420,7 +1417,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1462,7 +1459,7 @@ GameObject:
   - component: {fileID: 874135718}
   m_Layer: 0
   m_Name: rock27
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1477,8 +1474,8 @@ Transform:
   m_LocalPosition: {x: -1.5130994, y: 5.6225705, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 23
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &874135718
 SpriteRenderer:
@@ -1495,7 +1492,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1537,7 +1534,7 @@ GameObject:
   - component: {fileID: 886610107}
   m_Layer: 0
   m_Name: rock26
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1552,8 +1549,8 @@ Transform:
   m_LocalPosition: {x: -4.008599, y: 5.785928, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 24
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &886610107
 SpriteRenderer:
@@ -1570,7 +1567,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1612,7 +1609,7 @@ GameObject:
   - component: {fileID: 916901020}
   m_Layer: 0
   m_Name: rock22
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1627,8 +1624,8 @@ Transform:
   m_LocalPosition: {x: 4.221401, y: 1.8211708, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 27
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &916901020
 SpriteRenderer:
@@ -1645,7 +1642,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1687,7 +1684,7 @@ GameObject:
   - component: {fileID: 933903350}
   m_Layer: 0
   m_Name: rock16
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1707,7 +1704,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1748,8 +1745,8 @@ Transform:
   m_LocalPosition: {x: -2.2185986, y: -1.7988292, z: 0.014831412}
   m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 9
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8.733001}
 --- !u!1 &967289579
 GameObject:
@@ -1762,7 +1759,7 @@ GameObject:
   - component: {fileID: 967289581}
   m_Layer: 0
   m_Name: rock25
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1777,8 +1774,8 @@ Transform:
   m_LocalPosition: {x: -0.44485676, y: 1.8046623, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 31
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &967289581
 SpriteRenderer:
@@ -1795,7 +1792,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1837,7 +1834,7 @@ GameObject:
   - component: {fileID: 1091320237}
   m_Layer: 0
   m_Name: rock12
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1852,8 +1849,8 @@ Transform:
   m_LocalPosition: {x: 5.371244, y: 4.2457147, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 29
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1091320237
 SpriteRenderer:
@@ -1870,7 +1867,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1912,7 +1909,7 @@ GameObject:
   - component: {fileID: 1101010113}
   m_Layer: 0
   m_Name: rock14
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1932,7 +1929,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1973,8 +1970,40 @@ Transform:
   m_LocalPosition: {x: -3.4185987, y: 4.301171, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1131893829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1131893830}
+  m_Layer: 0
+  m_Name: holdRock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1131893830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1131893829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 738180137}
+  - {fileID: 1770895603}
+  - {fileID: 283680366}
+  - {fileID: 1419417711}
   m_Father: {fileID: 452703829}
-  m_RootOrder: 17
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1150399568
 GameObject:
@@ -2062,7 +2091,7 @@ GameObject:
   - component: {fileID: 1155405952}
   m_Layer: 0
   m_Name: rock17
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2082,7 +2111,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2123,8 +2152,8 @@ Transform:
   m_LocalPosition: {x: 5.6114016, y: -1.5788292, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 13
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1229421347
 GameObject:
@@ -2137,7 +2166,7 @@ GameObject:
   - component: {fileID: 1229421348}
   m_Layer: 0
   m_Name: rock02
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2157,7 +2186,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2198,8 +2227,8 @@ Transform:
   m_LocalPosition: {x: -4.8185987, y: -1.3288292, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 8
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1294930441
 GameObject:
@@ -2212,7 +2241,7 @@ GameObject:
   - component: {fileID: 1294930443}
   m_Layer: 0
   m_Name: rock29
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2227,8 +2256,8 @@ Transform:
   m_LocalPosition: {x: -3.2385988, y: 5.571171, z: 0.014831412}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 22
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1294930443
 SpriteRenderer:
@@ -2245,7 +2274,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2287,7 +2316,7 @@ GameObject:
   - component: {fileID: 1298945005}
   m_Layer: 0
   m_Name: rock18
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2307,7 +2336,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2348,8 +2377,8 @@ Transform:
   m_LocalPosition: {x: -3.6785989, y: 2.7811708, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 6
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1419417709
 GameObject:
@@ -2382,7 +2411,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2423,8 +2452,8 @@ Transform:
   m_LocalPosition: {x: 8.751402, y: -0.98882926, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 11
+  m_Father: {fileID: 1131893830}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1493928697
 GameObject:
@@ -2437,7 +2466,7 @@ GameObject:
   - component: {fileID: 1493928698}
   m_Layer: 0
   m_Name: rock6
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2457,7 +2486,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2498,8 +2527,8 @@ Transform:
   m_LocalPosition: {x: -5.290805, y: 2.744179, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 1
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1494438936
 GameObject:
@@ -2512,7 +2541,7 @@ GameObject:
   - component: {fileID: 1494438937}
   m_Layer: 0
   m_Name: rock5
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2532,7 +2561,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2573,8 +2602,63 @@ Transform:
   m_LocalPosition: {x: -6.3585987, y: 4.26, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1574136213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1574136214}
+  m_Layer: 0
+  m_Name: moveRock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1574136214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1574136213}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 425780792}
+  - {fileID: 1294930442}
+  - {fileID: 874135717}
+  - {fileID: 886610106}
+  - {fileID: 814295223}
+  - {fileID: 916901019}
+  - {fileID: 852678874}
+  - {fileID: 1091320236}
+  - {fileID: 540332980}
+  - {fileID: 967289580}
+  - {fileID: 416115720}
+  - {fileID: 1493928699}
+  - {fileID: 256049588}
+  - {fileID: 547345792}
+  - {fileID: 1494438938}
+  - {fileID: 1298945006}
+  - {fileID: 407648045}
+  - {fileID: 1229421349}
+  - {fileID: 933903351}
+  - {fileID: 421396910}
+  - {fileID: 561723691}
+  - {fileID: 1155405953}
+  - {fileID: 85531146}
+  - {fileID: 43966812}
+  - {fileID: 730450214}
+  - {fileID: 1101010114}
+  - {fileID: 1583037292}
   m_Father: {fileID: 452703829}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1583037290
 GameObject:
@@ -2587,7 +2671,7 @@ GameObject:
   - component: {fileID: 1583037291}
   m_Layer: 0
   m_Name: rock13
-  m_TagString: Untagged
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2607,7 +2691,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2648,8 +2732,8 @@ Transform:
   m_LocalPosition: {x: -2.8365712, y: 4.540829, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 18
+  m_Father: {fileID: 1574136214}
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1770895602
 GameObject:
@@ -2677,8 +2761,8 @@ Transform:
   m_LocalPosition: {x: 2.2814014, y: 5.5211706, z: 0.014831412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 452703829}
-  m_RootOrder: 20
+  m_Father: {fileID: 1131893830}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1770895604
 SpriteRenderer:
@@ -2695,7 +2779,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58cd13c1e7f896c4e875c0ea504d0816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2735,7 +2819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2095684293}
   - component: {fileID: 2095684292}
-  - component: {fileID: 2095684294}
+  - component: {fileID: 2095684295}
   m_Layer: 0
   m_Name: MouseLight
   m_TagString: Untagged
@@ -2755,7 +2839,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 4
   m_Range: 10
-  m_SpotAngle: 65
+  m_SpotAngle: 74.7
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -2787,13 +2871,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2095684291}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: -3.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2095684294
+--- !u!114 &2095684295
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2801,7 +2885,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2095684291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e0b70588f1ec114581ecd7141bd99fe, type: 3}
+  m_Script: {fileID: 11500000, guid: c5b3491ba557a3f46b57e836adb7c75d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dis: 10
+  dis: 5
