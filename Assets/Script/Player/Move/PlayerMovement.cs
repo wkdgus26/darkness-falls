@@ -16,9 +16,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Update ()
     {
         if (Input.GetMouseButtonDown(0))
-            StartCoroutine("playerMove");
-        
-
+        StartCoroutine("playerMove");
     }
     
     IEnumerator playerMove()
@@ -26,17 +24,19 @@ public class PlayerMovement : MonoBehaviour {
         Vector2 speed = Vector2.zero;
 
         Vector2 msPos = camera.ScreenToWorldPoint(Input.mousePosition);
+        
         while (gameObject.transform.position.x <= msPos.x)
         {
-
             if (gameObject.transform.position.x == msPos.x)
                 Debug.Log("OH");
-            gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position
-                    , msPos, Time.smoothDeltaTime * 3f);
-            msPos.x += 0.1f;
+             Player.transform.position = Vector2.MoveTowards(gameObject.transform.position, new Vector2 (msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 3f);
+            //Player.transform.position = Vector2.Lerp(gameObject.transform.position, new Vector2 (msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 3f);
+            //msPos.x += 0.1f;
             yield return null;
         }
         
+       // Debug.Log(msPos);
+       // yield return null;
     }
 }
 
