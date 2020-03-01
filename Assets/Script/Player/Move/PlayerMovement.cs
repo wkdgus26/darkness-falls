@@ -6,22 +6,30 @@ public class PlayerMovement : MonoBehaviour {
     private float cXPosition = 0f;
     private GameObject Player;
     private Camera camera;
-    
+
     void Start()
     {
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         Player = gameObject;
     }
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             StopAllCoroutines();
             StartCoroutine("playerMove");
         }
+<<<<<<< Updated upstream
+=======
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+>>>>>>> Stashed changes
+    }
+
     IEnumerator playerMove()
     {
         Vector2 speed = Vector2.zero;
@@ -50,9 +58,8 @@ public class PlayerMovement : MonoBehaviour {
                 yield return null;
             }
         }
-        
-       // Debug.Log(msPos);
-       // yield return null;
+
+        // Debug.Log(msPos);
+        // yield return null;
     }
 }
-

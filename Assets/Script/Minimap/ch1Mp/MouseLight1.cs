@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseLight : MonoBehaviour
+public class MouseLight1 : MonoBehaviour
 {
 
     RaycastHit2D hit;
