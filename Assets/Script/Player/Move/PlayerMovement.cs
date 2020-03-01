@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour {
             {
                 if (gameObject.transform.position.x == msPos.x)
                     Debug.Log("OH");
-                Player.transform.position = Vector2.MoveTowards(gameObject.transform.position, new Vector2(msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 3f);
+                Player.transform.position = Vector2.MoveTowards(gameObject.transform.position, new Vector2(msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 2.5f);
                 yield return null;
             }
         }
