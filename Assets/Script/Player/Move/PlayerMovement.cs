@@ -29,9 +29,9 @@ public class PlayerMovement : MonoBehaviour {
 
     IEnumerator playerMove()
     {
-        Vector2 speed = Vector2.zero;
+        Vector2 speed = Vector2.zero; //벡터 초기값
 
-        Vector2 msPos = camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 msPos = camera.ScreenToWorldPoint(Input.mousePosition); //카메라 안의 좌표값
 
         if (gameObject.transform.position.x < msPos.x)
         {
@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour {
             {
                 if (gameObject.transform.position.x == msPos.x)
                     Debug.Log("OH");
-                Player.transform.position = Vector2.MoveTowards(gameObject.transform.position, new Vector2(msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 2.5f);
+                Player.transform.position = Vector2.MoveTowards(gameObject.transform.position, new Vector2(msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 3.5f);
                 //Player.transform.position = Vector2.Lerp(gameObject.transform.position, new Vector2 (msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 3f);
                 //msPos.x += 0.1f;
                 yield return null;
