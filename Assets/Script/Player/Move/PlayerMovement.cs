@@ -22,11 +22,6 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-    }
-
     IEnumerator playerMove()
     {
         Vector2 speed = Vector2.zero;
@@ -37,11 +32,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             while (gameObject.transform.position.x <= msPos.x)
             {
-                if (gameObject.transform.position.x == msPos.x)
-                    Debug.Log("OH");
-                Player.transform.position = Vector2.MoveTowards(gameObject.transform.position, new Vector2(msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 2.5f);
-                //Player.transform.position = Vector2.Lerp(gameObject.transform.position, new Vector2 (msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 3f);
-                //msPos.x += 0.1f;
+                Player.transform.position += Vector3.right * 2f * Time.deltaTime;
                 yield return null;
             }
         }
@@ -49,14 +40,9 @@ public class PlayerMovement : MonoBehaviour {
         {
             while (gameObject.transform.position.x >= msPos.x)
             {
-                if (gameObject.transform.position.x == msPos.x)
-                    Debug.Log("OH");
-                Player.transform.position = Vector2.MoveTowards(gameObject.transform.position, new Vector2(msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 3f);
+                Player.transform.position += Vector3.left * 2f * Time.deltaTime;
                 yield return null;
             }
         }
-
-        // Debug.Log(msPos);
-        // yield return null;
     }
 }

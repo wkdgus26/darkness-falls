@@ -10,8 +10,8 @@ public class CameraPos : MonoBehaviour {
     void FixedUpdate()
     {
         Vector3 TargetPos = new Vector3(
-            Mathf.Clamp(player.transform.position.x, -5.8f, 5.8f), 
-            Mathf.Clamp(player.transform.position.y, -1.1f, 1.05f), 
+            Mathf.Clamp(player.transform.position.x, -4.34f, 4.34f), 
+            Mathf.Clamp(player.transform.position.y, -2.21f, 2.21f), 
             CameraZ);
         transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime * 1f);
     }
