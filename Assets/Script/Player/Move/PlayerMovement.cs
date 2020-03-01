@@ -20,16 +20,8 @@ public class PlayerMovement : MonoBehaviour {
             StopAllCoroutines();
             StartCoroutine("playerMove");
         }
-<<<<<<< Updated upstream
-=======
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
->>>>>>> Stashed changes
-    }
-
+    
     IEnumerator playerMove()
     {
         Vector2 speed = Vector2.zero;
