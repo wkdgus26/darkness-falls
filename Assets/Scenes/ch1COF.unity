@@ -6067,7 +6067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38aed57397986894992f9a690e530876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hopae: {fileID: 1262207691}
   mGame: {fileID: 218679516}
+  hopae: {fileID: 1262207691}
   dis: 5
   keyRock: {fileID: 1155405951}

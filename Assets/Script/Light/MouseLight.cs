@@ -9,17 +9,17 @@ public class MouseLight : MonoBehaviour {
     private Vector3 lightPosition;
     private Vector3 rockPosition;
     [SerializeField]
-    private GameObject hopae;
-    [SerializeField]
     private GameObject mGame;
+    [SerializeField]
+    private GameObject hopae;
     [SerializeField]
     private float dis = 5f;
     [SerializeField]
     private GameObject keyRock;
-    private float gameTime=0;
     private int limit = 0;
     private int selecLayer = 5;
     private int beforeLayer = 0;
+    private float gameTime = 0f;
     // Use this for initialization
     void Start()
     {
@@ -29,12 +29,13 @@ public class MouseLight : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        gameTime += Time.deltaTime;
         mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dis);
         lightPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         transform.position = lightPosition;
         Debug.DrawRay(transform.position, Vector3.forward * 10f, Color.red);
-        gameTime += Time.deltaTime;
-        if (gameTime >3)
+
+        if (gameTime > 3)
         {
             hopae.SetActive(true);
             if (Input.GetMouseButtonDown(0))
@@ -46,6 +47,7 @@ public class MouseLight : MonoBehaviour {
                     hit = Physics2D.Raycast(ray.origin, ray.direction);
                     if (hit.collider.tag == "hopae")
                     {
+
                         mGame.SetActive(false);
                     }
                     else
@@ -77,7 +79,6 @@ public class MouseLight : MonoBehaviour {
                         hit.transform.rotation = Quaternion.Euler(0, 0, 5f);
                         hit.transform.GetComponent<SpriteRenderer>().sortingOrder = selecLayer;
                         limit = 2;
-                        Debug.Log(limit);
                     }
 
                 }
@@ -92,6 +93,7 @@ public class MouseLight : MonoBehaviour {
                     }
                 }
             }
+
 
         }
     }
