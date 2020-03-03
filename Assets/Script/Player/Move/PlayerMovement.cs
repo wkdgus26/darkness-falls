@@ -3,40 +3,72 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
+    [SerializeField]
     private float cXPosition = 0f;
-    private GameObject Player;
+    [SerializeField]
     private Camera camera;
-    
+    [SerializeField]
+    private Animator ani;
+
     void Start()
     {
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        Player = gameObject;
+        ani = GetComponent<Animator>();
+        ani.SetBool("Idle", true);
     }
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update()
     {
         if (Input.GetMouseButtonDown(0))
-        StartCoroutine("playerMove");
+        {
+            ani.SetBool("Idle", false);
+            StopAllCoroutines();
+            StartCoroutine("playerMove");
+        }
     }
-    
+
     IEnumerator playerMove()
     {
         Vector2 speed = Vector2.zero;
-
         Vector2 msPos = camera.ScreenToWorldPoint(Input.mousePosition);
-        
-        while (gameObject.transform.position.x <= msPos.x)
+
+        if (gameObject.transform.position.x < msPos.x)
         {
-            if (gameObject.transform.position.x == msPos.x)
-                Debug.Log("OH");
-             Player.transform.position = Vector2.MoveTowards(gameObject.transform.position, new Vector2 (msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 3f);
-            //Player.transform.position = Vector2.Lerp(gameObject.transform.position, new Vector2 (msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 3f);
-            //msPos.x += 0.1f;
-            yield return null;
+            
+            ani.SetBool("LeftWalk", false);
+            ani.SetBool("RightWalk", true);   
+            while (gameObject.transform.position.x <= msPos.x)
+            {
+                if (gameObject.transform.position.x == msPos.x)
+                {
+                    Debug.Log("MousePosition Equals GameObjectPosition");
+                    ani.SetBool("RightWalk", false);
+                    ani.SetBool("Idle", true);
+                    yield return null;
+                }
+                transform.position += Vector3.right * 2f * Time.deltaTime;
+                yield return null;
+            }
+            
         }
-        
-       // Debug.Log(msPos);
-       // yield return null;
+        else if (gameObject.transform.position.x > msPos.x)
+        {
+            
+            ani.SetBool("RightWalk", false);
+            ani.SetBool("LeftWalk", true);
+            while (gameObject.transform.position.x >= msPos.x)
+            {
+                transform.position += Vector3.left * 2f * Time.deltaTime;
+                if (gameObject.transform.position.x == msPos.x)
+                {
+                    Debug.Log("MousePosition Equals GameObjectPosition");
+                    ani.SetBool("LeftWalk", false);
+                    ani.SetBool("Idle", true);
+                    yield return null;
+                }
+                yield return null;
+            }
+            
+        }
     }
 }
-
