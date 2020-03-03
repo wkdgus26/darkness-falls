@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    [SerializeField]
     private float cXPosition = 0f;
-    [SerializeField]
     private Camera camera;
-    [SerializeField]
     private Animator ani;
 
     void Start()
