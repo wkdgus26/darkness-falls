@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Script/Minimap/ch1Mp/MouseLight1.cs.meta
-guid: a306b436fd6738741b279f0f96e35161
-=======
-guid: 38aed57397986894992f9a690e530876
->>>>>>> master:Assets/Script/Light/MouseLight.cs.meta
+guid: f43ea5554e4025e48a4ac5b3a51c5202
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
