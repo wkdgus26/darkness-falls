@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Animation.meta
 guid: 92dd2863179f1d646a7ae67ec805ab3c
+=======
+guid: 15579e0ebacf32b4784af97f86aff20d
+>>>>>>> master:Assets/Script/Light.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
