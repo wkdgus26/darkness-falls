@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f695a383f002f541982046e9991adda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  samjok5: {fileID: 1064599662}
+  samjok5: {fileID: 0}
 --- !u!61 &127002590
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -630,7 +630,7 @@ GameObject:
   - component: {fileID: 176095784}
   - component: {fileID: 176095783}
   - component: {fileID: 176095782}
-  - component: {fileID: 176095785}
+  - component: {fileID: 176095786}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -698,7 +698,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &176095785
+--- !u!114 &176095786
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1185,7 +1185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e01e19c53191746a9e8f7366374435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miniGame: {fileID: 218679516}
+  miniGame: {fileID: 0}
 --- !u!65 &330689675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2883,7 +2883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
-  ParabolaRoot: {fileID: 866405249}
+  ParabolaRoot: {fileID: 0}
   Autostart: 1
   Animation: 1
 --- !u!65 &592546074
@@ -4756,7 +4756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7388802c6939cf44d814dd58abbaf760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
+  Speed: 1
   ParabolaRoot: {fileID: 358835520}
   Autostart: 1
   Animation: 1

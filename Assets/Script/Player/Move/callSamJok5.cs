@@ -8,6 +8,6 @@ public class callSamJok5 : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("EventTrig1"))
-            samjok5.SetActive(true);
+        samjok5.SetActive(true);
     }
 }

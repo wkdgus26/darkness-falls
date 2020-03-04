@@ -54,9 +54,7 @@ public class PlayerMovement : MonoBehaviour {
             ani.SetBool("LeftWalk", true);
             while (gameObject.transform.position.x >= msPos.x)
             {
-                if (gameObject.transform.position.x == msPos.x)
-                    Debug.Log("OH");
-                Player.transform.position = Vector2.MoveTowards(gameObject.transform.position, new Vector2(msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 2.5f);
+                transform.position = Vector2.MoveTowards(gameObject.transform.position, new Vector2(msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 2.5f);
                 yield return null;
             }
             
