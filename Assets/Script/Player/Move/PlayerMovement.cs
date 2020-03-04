@@ -18,9 +18,9 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            ani.SetBool("Idle", false);
             StopAllCoroutines();
             StartCoroutine("playerMove");
+            
         }
     }
 
@@ -31,37 +31,34 @@ public class PlayerMovement : MonoBehaviour {
 
         if (gameObject.transform.position.x < msPos.x)
         {
-            
             ani.SetBool("LeftWalk", false);
+            ani.SetBool("Idle", false);
             ani.SetBool("RightWalk", true);   
             while (gameObject.transform.position.x <= msPos.x)
-            {
-                if (gameObject.transform.position.x == msPos.x)
+            { 
+                transform.position += Vector3.right * 2f * Time.deltaTime;
+                if (gameObject.transform.position.x >= msPos.x + float.Epsilon)
                 {
-                    Debug.Log("MousePosition Equals GameObjectPosition");
                     ani.SetBool("RightWalk", false);
                     ani.SetBool("Idle", true);
-                    yield return null;
                 }
-                transform.position += Vector3.right * 2f * Time.deltaTime;
+                
                 yield return null;
             }
-            
         }
         else if (gameObject.transform.position.x > msPos.x)
         {
             
             ani.SetBool("RightWalk", false);
+            ani.SetBool("Idle", false);
             ani.SetBool("LeftWalk", true);
             while (gameObject.transform.position.x >= msPos.x)
             {
                 transform.position += Vector3.left * 2f * Time.deltaTime;
-                if (gameObject.transform.position.x == msPos.x)
+                if (gameObject.transform.position.x <= msPos.x)
                 {
-                    Debug.Log("MousePosition Equals GameObjectPosition");
                     ani.SetBool("LeftWalk", false);
                     ani.SetBool("Idle", true);
-                    yield return null;
                 }
                 yield return null;
             }
