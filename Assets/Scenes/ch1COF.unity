@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f695a383f002f541982046e9991adda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  samjok5: {fileID: 0}
+  samjok5: {fileID: 1064599662}
 --- !u!61 &127002590
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4738,13 +4738,14 @@ GameObject:
   - component: {fileID: 1064599663}
   - component: {fileID: 1064599667}
   - component: {fileID: 1064599669}
+  - component: {fileID: 1064599670}
   m_Layer: 0
   m_Name: SamJok5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1064599663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4756,7 +4757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7388802c6939cf44d814dd58abbaf760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
+  Speed: 5
   ParabolaRoot: {fileID: 358835520}
   Autostart: 1
   Animation: 1
@@ -4884,6 +4885,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2049fef386a48df4688b2bf8a6c822ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1064599670
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064599662}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1091320235
 GameObject:
   m_ObjectHideFlags: 0
