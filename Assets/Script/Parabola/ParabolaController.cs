@@ -35,6 +35,8 @@ public class ParabolaController : MonoBehaviour
     //draw
     protected ParabolaFly parabolaFly;
 
+
+    private string objName = null;
     void OnDrawGizmos()
     {
         if (gizmo == null)
@@ -66,7 +68,8 @@ public class ParabolaController : MonoBehaviour
     {
 
         parabolaFly = new ParabolaFly(ParabolaRoot.transform);
-
+        objName = ParabolaRoot.name;
+        Debug.Log(objName);
         if (Autostart)
         {
             RefreshTransforms(Speed);
@@ -99,6 +102,13 @@ public class ParabolaController : MonoBehaviour
         {
             animationTime = float.MaxValue;
             Animation = false;
+        }
+        else if(!objName.Equals(ParabolaRoot.name))
+        {
+            parabolaFly = new ParabolaFly(ParabolaRoot.transform);
+            RefreshTransforms(Speed);
+            FollowParabola();
+            objName = ParabolaRoot.name;
         }
     }
 

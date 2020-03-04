@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Script/Light/MouseLight2.cs.meta
+guid: 08e90b528c9dd794fa5951dfcecbe0a7
+=======
+guid: dd13b8881be2ee246bd91ba9e9c88d04
+>>>>>>> master:Assets/Script/Light/MouseEvent(구현중).cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
