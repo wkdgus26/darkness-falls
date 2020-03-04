@@ -9,6 +9,7 @@ TagManager:
   - keyRock
   - map
   - hopae
+  - EventTrig1
   layers:
   - Default
   - TransparentFX
