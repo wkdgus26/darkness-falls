@@ -10,4 +10,5 @@ public class callSamJok5 : MonoBehaviour {
         if (other.gameObject.CompareTag("EventTrig1"))
         samjok5.SetActive(true);
     }
+    
 }

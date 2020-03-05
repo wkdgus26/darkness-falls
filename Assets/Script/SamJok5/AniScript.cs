@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AniScript : MonoBehaviour {
     private Animator ani;
+
     void Start()
     {
         ani = gameObject.GetComponent<Animator>();
