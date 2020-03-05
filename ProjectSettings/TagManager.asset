@@ -10,6 +10,8 @@ TagManager:
   - map
   - hopae
   - EventTrig1
+  - EventTrig2
+  - dhopae
   layers:
   - Default
   - TransparentFX
