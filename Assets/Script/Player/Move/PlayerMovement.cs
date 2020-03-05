@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour {
             while (gameObject.transform.position.x <= msPos.x)
             { 
                 transform.position += Vector3.right * 2f * Time.deltaTime;
-                if (gameObject.transform.position.x >= msPos.x + float.Epsilon)
+                if (gameObject.transform.position.x >= msPos.x - 0.1f)
                 {
                     ani.SetBool("RightWalk", false);
                     ani.SetBool("Idle", true);
@@ -54,7 +54,12 @@ public class PlayerMovement : MonoBehaviour {
             ani.SetBool("LeftWalk", true);
             while (gameObject.transform.position.x >= msPos.x)
             {
-                transform.position = Vector2.MoveTowards(gameObject.transform.position, new Vector2(msPos.x, gameObject.transform.position.y), Time.smoothDeltaTime * 2.5f);
+                transform.position += Vector3.left * 2f * Time.deltaTime;
+                if (gameObject.transform.position.x <= msPos.x + 0.1f)
+                {
+                    ani.SetBool("LeftWalk", false);
+                    ani.SetBool("Idle", true);
+                }
                 yield return null;
             }
             
