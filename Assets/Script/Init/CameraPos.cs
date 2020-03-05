@@ -8,7 +8,6 @@ public class CameraPos : MonoBehaviour {
     public float CameraZ = -10;
     void FixedUpdate()
     {
-        Camera.main.orthographicSize = Screen.height;
 
         Vector3 TargetPos = new Vector3(
             Mathf.Clamp(player.transform.position.x, -3.43f, 3.43f), 

@@ -105,10 +105,10 @@ public class ParabolaController : MonoBehaviour
             Destroy(GameObject.Find(objName));
 
         }
-        else if(!objName.Equals(ParabolaRoot.name) && ParabolaRoot != null)
+        else if(!objName.Equals(ParabolaRoot.name))
         {
             
-            //parabolaFly = new ParabolaFly(ParabolaRoot.transform);
+            parabolaFly = new ParabolaFly(ParabolaRoot.transform);
             Animation = true;
             RefreshTransforms(Speed);
             FollowParabola();
