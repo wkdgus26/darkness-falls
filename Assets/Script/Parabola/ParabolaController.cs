@@ -102,14 +102,10 @@ public class ParabolaController : MonoBehaviour
         {
             animationTime = float.MaxValue;
             Animation = false;
-            Destroy(GameObject.Find(objName));
-
         }
         else if(!objName.Equals(ParabolaRoot.name))
         {
-            
             parabolaFly = new ParabolaFly(ParabolaRoot.transform);
-            Animation = true;
             RefreshTransforms(Speed);
             FollowParabola();
             objName = ParabolaRoot.name;
