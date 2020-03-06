@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
+    [SerializeField]
+    private MouseEvent msEvent;
     private float cXPosition = 0f;
     private Camera camera;
     private Animator ani;
+    
 
     void Start()
     {
@@ -16,11 +19,13 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!msEvent.isTalk)
         {
-            StopAllCoroutines();
-            StartCoroutine("playerMove");
-            
+            if (Input.GetMouseButtonDown(0) )
+            {
+                StopAllCoroutines();
+                StartCoroutine("playerMove");
+            }
         }
     }
 

@@ -10,6 +10,7 @@ TagManager:
   - map
   - hopae
   - EventTrig1
+  - samjok
   layers:
   - Default
   - TransparentFX

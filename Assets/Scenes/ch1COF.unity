@@ -532,7 +532,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: ddbb7f841e6c44748bf22aa45052c9e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -568,6 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3b7fe0676552749a6e981fa8d4b5b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  msEvent: {fileID: 1190427254}
 --- !u!70 &127002588
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -729,7 +730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &218679517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,7 +1215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e01e19c53191746a9e8f7366374435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miniGame: {fileID: 0}
+  miniGame: {fileID: 665680675}
 --- !u!65 &330689675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3073,7 +3074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &665680676
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3882,9 +3883,10 @@ GameObject:
   - component: {fileID: 883372887}
   - component: {fileID: 883372888}
   - component: {fileID: 883372889}
+  - component: {fileID: 883372890}
   m_Layer: 0
   m_Name: 2
-  m_TagString: Untagged
+  m_TagString: hopae
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3972,6 +3974,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 19.49, y: 0.4056883}
+  m_EdgeRadius: 0
+--- !u!61 &883372890
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 883372886}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -5.2437887}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.49, y: 12.2}
+    newSize: {x: 19.49, y: 12.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.49, y: 1.5909948}
   m_EdgeRadius: 0
 --- !u!1 &886610105
 GameObject:
@@ -4796,7 +4823,7 @@ GameObject:
   - component: {fileID: 1064599670}
   m_Layer: 0
   m_Name: SamJok5
-  m_TagString: Untagged
+  m_TagString: samjok
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4870,7 +4897,7 @@ Transform:
   m_GameObject: {fileID: 1064599662}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -18.21, y: 7.06, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -5881,6 +5908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1190427253}
+  - component: {fileID: 1190427254}
   m_Layer: 0
   m_Name: gameManager
   m_TagString: Untagged
@@ -5901,6 +5929,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1190427254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190427252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ab62b078b012b548a25d9a4eb97e868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTalk: 0
+  isMGame1: 0
 --- !u!1 &1229421347
 GameObject:
   m_ObjectHideFlags: 0
@@ -6106,7 +6147,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1236565756}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.1, y: 2.5, z: -1}
   m_LocalScale: {x: 0.21000001, y: 0.21000001, z: 1}
   m_Children:
@@ -7988,7 +8029,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4275335458514288, guid: 6b5825f259401de40b157836e80e41b7, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.49
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 4275335458514288, guid: 6b5825f259401de40b157836e80e41b7, type: 2}
       propertyPath: m_LocalRotation.x
@@ -8210,6 +8251,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2095684291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38aed57397986894992f9a690e530876, type: 3}
+  m_Script: {fileID: 11500000, guid: f43ea5554e4025e48a4ac5b3a51c5202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mGame: {fileID: 665680675}
+  hopae: {fileID: 1262207691}
+  dis: 5
+  keyRock: {fileID: 1155405951}
