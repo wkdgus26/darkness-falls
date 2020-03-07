@@ -20,6 +20,7 @@ public class HopaeController : MonoBehaviour {
         if (other.gameObject.CompareTag("map"))
         {
             StartCoroutine(delayCoroutine());
+            GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 

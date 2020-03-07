@@ -15,9 +15,9 @@ public class MouseEvent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        mousePos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         if (Input.GetMouseButtonDown(0))
         {
+            mousePos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
             Ray2D ray = new Ray2D(mousePos, Vector2.zero);
             hit = Physics2D.Raycast(ray.origin, ray.direction);
 
