@@ -6,6 +6,7 @@ public class CameraPos : MonoBehaviour {
     public GameObject player;
     private GameObject Target;
     public float CameraZ = -10;
+    
     void FixedUpdate()
     {
         Vector3 TargetPos = new Vector3(

@@ -9,6 +9,7 @@ public class MouseEvent : MonoBehaviour {
     public bool isFly = false;
     public bool isMGame1 = false;
     public bool isGame = false;
+    public GameObject miniGame;
 
     // Use this for initialization
     void Start () {
@@ -32,9 +33,9 @@ public class MouseEvent : MonoBehaviour {
                         Debug.Log("samjok5 hi");
                         isTalk = true;
                     }
-                    else if (hit.collider.tag == "hopae")
+                    else if (hit.collider.tag == "hopae" && isGame)
                     {
-                        Debug.Log("hopae hi");
+                        miniGame.SetActive(true);
                     }
                 }
             }

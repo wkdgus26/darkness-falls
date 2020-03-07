@@ -11,9 +11,11 @@ public class PlayerMovement : MonoBehaviour {
     private Camera camera;
     private Animator ani;
     RaycastHit2D hit;
+    Rigidbody2D rigid;
 
     void Start()
     {
+        rigid = GetComponent<Rigidbody2D>();
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         ani = GetComponent<Animator>();
         ani.SetBool("Idle", true);
@@ -23,14 +25,32 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (!msEvent.isTalk && !msEvent.isFly)
         {
-            if (Input.GetMouseButtonDown(0) )
+            if (Input.GetMouseButtonDown(0))
             {
                 StopAllCoroutines();
                 StartCoroutine("playerMove");
             }
+            else if (gameObject.transform.rotation.z > 0.4 || gameObject.transform.rotation.z < -0.4)
+            {
+                rigid.freezeRotation = true;
+                StartCoroutine("limitRotation");
+            }
         }
+
+        GameZone();
     }
 
+    private void GameZone()
+    {
+        if (transform.position.x < hopae.transform.position.x + 0.2f && transform.position.x > hopae.transform.position.x - 0.2f)
+        {
+            msEvent.isGame = true;
+        }
+        else
+        {
+            msEvent.isGame = false;
+        }
+    }
     IEnumerator playerMove()
     {
         Vector2 speed = Vector2.zero;
@@ -50,7 +70,7 @@ public class PlayerMovement : MonoBehaviour {
                     ani.SetBool("Idle", false);
                     ani.SetBool("RightWalk", true);
                     while (gameObject.transform.position.x <= hopae.transform.position.x)
-                    {
+                    {rigid.freezeRotation = false;
                         transform.position += Vector3.right * 2f * Time.deltaTime;
                         if (gameObject.transform.position.x >= hopae.transform.position.x - 0.1f)
                         {
@@ -92,6 +112,7 @@ public class PlayerMovement : MonoBehaviour {
                 ani.SetBool("RightWalk", true);
                 while (gameObject.transform.position.x <= msPos.x)
                 {
+                    rigid.freezeRotation = false;
                     transform.position += Vector3.right * 2f * Time.deltaTime;
                     if (gameObject.transform.position.x >= msPos.x - 0.1f)
                     {
@@ -110,6 +131,7 @@ public class PlayerMovement : MonoBehaviour {
                 ani.SetBool("LeftWalk", true);
                 while (gameObject.transform.position.x >= msPos.x)
                 {
+                    rigid.freezeRotation = false;
                     transform.position += Vector3.left * 2f * Time.deltaTime;
                     if (gameObject.transform.position.x <= msPos.x + 0.1f)
                     {
@@ -120,6 +142,19 @@ public class PlayerMovement : MonoBehaviour {
                 }
             }
         }
+    }
 
+    IEnumerator limitRotation()
+    {
+        if (gameObject.transform.rotation.z > 0.35)
+        {
+            while (gameObject.transform.rotation.z >= 0.35)
+            {
+                rigid.freezeRotation = false;
+                gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, Quaternion.Euler(0, 0, 35f), Time.deltaTime);
+                
+                yield return null;
+            }
+        }
     }
 }

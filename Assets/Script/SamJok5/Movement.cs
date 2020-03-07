@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
     private ParabolaController pc;
-
-    [SerializeField]
-    private GameObject mainCam;
-    [SerializeField]
-    private GameObject samJokCam;
+    
     [SerializeField]
     private GameObject hopae;
     [SerializeField]
@@ -17,8 +13,6 @@ public class Movement : MonoBehaviour {
     // Use this for initialization
     void Start () {
         msEvent.isFly = true;
-        mainCam.SetActive(false);
-        samJokCam.SetActive(true);
         pc = GetComponent<ParabolaController>();
 	}
 
@@ -47,8 +41,6 @@ public class Movement : MonoBehaviour {
     IEnumerator delayCoroutine()
     {
         yield return new WaitForSeconds(1f);
-        samJokCam.SetActive(false);
-        mainCam.SetActive(true);
         msEvent.isMGame1 = true;
         msEvent.isFly = false;
     }
