@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
     private ParabolaController pc;
-
-    [SerializeField]
-    private GameObject mainCam;
-    [SerializeField]
-    private GameObject samJokCam;
+    
     [SerializeField]
     private GameObject hopae;
+    [SerializeField]
+    private MouseEvent msEvent;
 
     // Use this for initialization
     void Start () {
-        mainCam.SetActive(false);
-        samJokCam.SetActive(true);
+        msEvent.isFly = true;
         pc = GetComponent<ParabolaController>();
 	}
 
@@ -36,6 +33,7 @@ public class Movement : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("EventTrig1"))
         {
+            
             StartCoroutine(delayCoroutine());
         }
     }
@@ -43,7 +41,7 @@ public class Movement : MonoBehaviour {
     IEnumerator delayCoroutine()
     {
         yield return new WaitForSeconds(1f);
-        samJokCam.SetActive(false);
-        mainCam.SetActive(true);
+        msEvent.isMGame1 = true;
+        msEvent.isFly = false;
     }
 }
