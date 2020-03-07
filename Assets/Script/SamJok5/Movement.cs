@@ -11,9 +11,12 @@ public class Movement : MonoBehaviour {
     private GameObject samJokCam;
     [SerializeField]
     private GameObject hopae;
+    [SerializeField]
+    private MouseEvent msEvent;
 
     // Use this for initialization
     void Start () {
+        msEvent.isFly = true;
         mainCam.SetActive(false);
         samJokCam.SetActive(true);
         pc = GetComponent<ParabolaController>();
@@ -36,6 +39,7 @@ public class Movement : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("EventTrig1"))
         {
+            
             StartCoroutine(delayCoroutine());
         }
     }
@@ -45,5 +49,7 @@ public class Movement : MonoBehaviour {
         yield return new WaitForSeconds(1f);
         samJokCam.SetActive(false);
         mainCam.SetActive(true);
+        msEvent.isMGame1 = true;
+        msEvent.isFly = false;
     }
 }
