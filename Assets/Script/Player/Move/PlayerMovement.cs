@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour {
         if (!msEvent.isTalk && !msEvent.isFly)
         {
             if (Input.GetMouseButtonDown(0))
-            {
+            {       
                 StopAllCoroutines();
                 StartCoroutine("playerMove");
             }
