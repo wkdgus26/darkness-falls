@@ -41,7 +41,6 @@ public class Movement : MonoBehaviour {
     IEnumerator delayCoroutine()
     {
         yield return new WaitForSeconds(1f);
-        msEvent.isMGame1 = true;
         msEvent.isFly = false;
     }
 }

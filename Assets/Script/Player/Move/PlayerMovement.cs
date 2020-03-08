@@ -9,9 +9,9 @@ public class PlayerMovement : MonoBehaviour {
     private GameObject hopae;
     private float cXPosition = 0f;
     private Camera camera;
-    private Animator ani;
+    public Animator ani;
     RaycastHit2D hit;
-    Rigidbody2D rigid;
+    public Rigidbody2D rigid;
 
     void Start()
     {
@@ -23,10 +23,10 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (!msEvent.isTalk && !msEvent.isFly)
+        if (!msEvent.isTalk && !msEvent.isFly && msEvent.isStart)
         {
             if (Input.GetMouseButtonDown(0))
-            {       
+            {
                 StopAllCoroutines();
                 StartCoroutine("playerMove");
             }
@@ -36,8 +36,18 @@ public class PlayerMovement : MonoBehaviour {
                 StartCoroutine("limitRotation");
             }
         }
+        if(msEvent.isFly || msEvent.isTalk)
+        {
+            StopAllCoroutines();
+            ani.SetBool("RightWalk", false);
+            ani.SetBool("LefttWalk", false);
+            ani.SetBool("Idle", true);
+        }
 
-        GameZone();
+        if (msEvent.isMGame1)
+        {
+            GameZone();
+        }
     }
 
     private void GameZone()
