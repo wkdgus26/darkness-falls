@@ -668,6 +668,7 @@ GameObject:
   - component: {fileID: 176095783}
   - component: {fileID: 176095782}
   - component: {fileID: 176095785}
+  - component: {fileID: 176095786}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -750,6 +751,24 @@ MonoBehaviour:
   msEvent: {fileID: 1190427254}
   menu: {fileID: 167643486}
   speed: 20
+--- !u!114 &176095786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 176095781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8225ac09b82f946a333a3f7c7fdbba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomSize: 5.4
+  miniGame: {fileID: 665680675}
+  target: {fileID: 1236565756}
+  limitX: 10
+  limitY: 6
+  speedX: 0.02
+  speedY: 1
 --- !u!1 &218679516
 GameObject:
   m_ObjectHideFlags: 0
@@ -5879,6 +5898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playermove: {fileID: 127002587}
+  zoomCon: {fileID: 176095786}
   isTalk: 0
   isFly: 0
   isMGame1: 0
@@ -6083,7 +6103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1236565757
 Transform:
   m_ObjectHideFlags: 0
@@ -6158,7 +6178,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.85
+  m_Radius: 2.7
 --- !u!50 &1236565760
 Rigidbody2D:
   serializedVersion: 4

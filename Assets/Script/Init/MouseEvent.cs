@@ -7,6 +7,8 @@ public class MouseEvent : MonoBehaviour {
     public RaycastHit2D hit;
     [SerializeField]
     private PlayerMovement playermove;
+    [SerializeField]
+    private ZoomControl zoomCon;
     public bool isTalk = false;
     public bool isFly = false;
     public bool isMGame1 = false;
@@ -34,12 +36,15 @@ public class MouseEvent : MonoBehaviour {
                 {
                     if (hit.collider.tag == "samjok")
                     {
+                        Debug.Log("samjok");
                         //isTalk = true;
                         isMGame1 = true;
                     }
                     else if (hit.collider.tag == "hopae" && isGame)
                     {
-                        miniGame.SetActive(true);
+                        Debug.Log("hopae");
+                        zoomCon.ZoomIn();
+                        
                     }
                 }
             }
@@ -50,4 +55,5 @@ public class MouseEvent : MonoBehaviour {
         }
     }
     
+
 }
