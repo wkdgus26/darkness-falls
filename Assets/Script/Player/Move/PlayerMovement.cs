@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour {
     private MouseEvent msEvent;
     [SerializeField]
     private GameObject hopae;
+    [SerializeField]
+    private GameObject samjok;
     private float cXPosition = 0f;
     private Camera camera;
     public Animator ani;
@@ -23,7 +25,17 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (!msEvent.isTalk && !msEvent.isFly && msEvent.isStart)
+        if (msEvent.hit == true)
+        {
+            if (msEvent.hit.collider.tag == "samjok" && !msEvent.isTalk)
+            {
+                StopAllCoroutines();
+                msEvent.isTalk = true;
+                StartCoroutine(moveSamjokCoroutine());
+            }
+        }
+
+        else if (!msEvent.isTalk && !msEvent.isFly && msEvent.isStart)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -36,14 +48,14 @@ public class PlayerMovement : MonoBehaviour {
                 StartCoroutine("limitRotation");
             }
         }
-        if(msEvent.isFly || msEvent.isTalk)
+        if(msEvent.isFly)
         {
             StopAllCoroutines();
             ani.SetBool("RightWalk", false);
             ani.SetBool("LefttWalk", false);
             ani.SetBool("Idle", true);
         }
-
+        
         if (msEvent.isMGame1)
         {
             GameZone();
@@ -150,6 +162,47 @@ public class PlayerMovement : MonoBehaviour {
                     }
                     yield return null;
                 }
+            }
+        }
+    }
+
+    IEnumerator moveSamjokCoroutine()
+    {
+        if (gameObject.transform.position.x < samjok.transform.position.x - 0.7f)
+        {
+            ani.SetBool("LeftWalk", false);
+            ani.SetBool("Idle", false);
+            ani.SetBool("RightWalk", true);
+            while (gameObject.transform.position.x <= samjok.transform.position.x - 0.7f)
+            {
+                rigid.freezeRotation = false;
+                transform.position += Vector3.right * 2f * Time.deltaTime;
+                if (gameObject.transform.position.x >= samjok.transform.position.x - 0.8f)
+                {
+                    ani.SetBool("RightWalk", false);
+                    ani.SetBool("Idle", true);
+                }
+
+                yield return null;
+            }
+        }
+        
+        else if (gameObject.transform.position.x > samjok.transform.position.x - 0.7f)
+        {
+
+            ani.SetBool("RightWalk", false);
+            ani.SetBool("Idle", false);
+            ani.SetBool("LeftWalk", true);
+            while (gameObject.transform.position.x >= samjok.transform.position.x - 0.7f)
+            {
+                rigid.freezeRotation = false;
+                transform.position += Vector3.left * 2f * Time.deltaTime;
+                if (gameObject.transform.position.x <= samjok.transform.position.x - 0.6f)
+                {
+                    ani.SetBool("LeftWalk", false);
+                    ani.SetBool("Idle", true);
+                }
+                yield return null;
             }
         }
     }

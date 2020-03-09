@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseEvent : MonoBehaviour {
     private Vector3 mousePos;
-    RaycastHit2D hit;
+    public RaycastHit2D hit;
     [SerializeField]
     private PlayerMovement playermove;
     public bool isTalk = false;
@@ -34,8 +34,7 @@ public class MouseEvent : MonoBehaviour {
                 {
                     if (hit.collider.tag == "samjok")
                     {
-                        StartCoroutine(moveSamjokCoroutine());
-                        isTalk = true;
+                        //isTalk = true;
                         isMGame1 = true;
                     }
                     else if (hit.collider.tag == "hopae" && isGame)
@@ -50,44 +49,5 @@ public class MouseEvent : MonoBehaviour {
             }
         }
     }
-
-    IEnumerator moveSamjokCoroutine()
-    {
-        if (gameObject.transform.position.x < mousePos.x)
-        {
-            playermove.ani.SetBool("LeftWalk", false);
-            playermove.ani.SetBool("Idle", false);
-            playermove.ani.SetBool("RightWalk", true);
-            while (gameObject.transform.position.x <= mousePos.x)
-            {
-                playermove.rigid.freezeRotation = false;
-                transform.position += Vector3.right * 2f * Time.deltaTime;
-                if (gameObject.transform.position.x >= mousePos.x - 0.1f)
-                {
-                    playermove.ani.SetBool("RightWalk", false);
-                    playermove.ani.SetBool("Idle", true);
-                }
-
-                yield return null;
-            }
-        }
-        else if (gameObject.transform.position.x > mousePos.x)
-        {
-
-            playermove.ani.SetBool("RightWalk", false);
-            playermove.ani.SetBool("Idle", false);
-            playermove.ani.SetBool("LeftWalk", true);
-            while (gameObject.transform.position.x >= mousePos.x)
-            {
-                playermove.rigid.freezeRotation = false;
-                transform.position += Vector3.left * 2f * Time.deltaTime;
-                if (gameObject.transform.position.x <= mousePos.x + 0.1f)
-                {
-                    playermove.ani.SetBool("LeftWalk", false);
-                    playermove.ani.SetBool("Idle", true);
-                }
-                yield return null;
-            }
-        }
-    }
+    
 }
