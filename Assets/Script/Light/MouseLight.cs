@@ -20,10 +20,12 @@ public class MouseLight : MonoBehaviour {
     private int selecLayer = 5;
     private int beforeLayer = 0;
     private float gameTime = 0f;
+    [SerializeField]
+    private GameObject player;
+
     // Use this for initialization
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -47,8 +49,9 @@ public class MouseLight : MonoBehaviour {
                     hit = Physics2D.Raycast(ray.origin, ray.direction);
                     if (hit.collider.tag == "key_hopae")
                     {
-
+                        player.SetActive(true);
                         mGame.SetActive(false);
+                        
                     }
                     else
                     {

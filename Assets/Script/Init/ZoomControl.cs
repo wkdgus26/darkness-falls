@@ -14,10 +14,12 @@ public class ZoomControl : MonoBehaviour {
     public float speedX;
     public float speedY;
     private Vector3 originCamera;
+    private GameObject player;
+
     //public Camera camera;
     // Use this for initialization
     void Start () {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -70,7 +72,8 @@ public class ZoomControl : MonoBehaviour {
             }
             else
             {
-                transform.position = new Vector3(Mathf.Lerp(transform.position.x, TargetPos.x -1.6f, speedX), TargetPos.y, -10);
+                transform.position = new Vector3(Mathf.Lerp(transform.position.x,
+                    TargetPos.x -1.6f, speedX), TargetPos.y, -10);
             }
 
             if (zoomSize > 2)
@@ -80,6 +83,7 @@ public class ZoomControl : MonoBehaviour {
             count += 1;
             yield return null;
         }
+        player.SetActive(false);
         miniGame.SetActive(true);
         this.transform.position = originCamera;
         zoomSize = 5.4f;
