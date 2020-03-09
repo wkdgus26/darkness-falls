@@ -45,7 +45,7 @@ public class MouseLight : MonoBehaviour {
                 {
                     Ray2D ray = new Ray2D(lightPosition, Vector2.zero);
                     hit = Physics2D.Raycast(ray.origin, ray.direction);
-                    if (hit.collider.tag == "hopae")
+                    if (hit.collider.tag == "key_hopae")
                     {
 
                         mGame.SetActive(false);
