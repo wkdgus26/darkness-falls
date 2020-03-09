@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour {
         {
             pc.ParabolaRoot = GameObject.Find("ParabolaRoot2");
         }
-        if (transform.position.x < -6.5f && transform.position.x > -7.2f) 
+        if (transform.position.x < -9.5f && transform.position.x > -10.2f) 
         {
             hopae.SetActive(true);
         }

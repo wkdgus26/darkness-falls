@@ -12,6 +12,7 @@ TagManager:
   - EventTrig1
   - samjok
   - mGame1
+  - key_hopae
   layers:
   - Default
   - TransparentFX
