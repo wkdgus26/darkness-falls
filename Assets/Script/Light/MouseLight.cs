@@ -22,10 +22,12 @@ public class MouseLight : MonoBehaviour {
     private int selecLayer = 5;
     private int beforeLayer = 0;
     private float gameTime = 0f;
+    [SerializeField]
+    private GameObject player;
+
     // Use this for initialization
     void Start()
     {
-
     }
 
     // Update is called once per frame

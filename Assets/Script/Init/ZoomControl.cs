@@ -16,6 +16,8 @@ public class ZoomControl : MonoBehaviour {
     public float speedX;
     public float speedY;
     private Vector3 originCamera;
+    private GameObject player;
+
     //public Camera camera;
     // Use this for initialization
     void Start () {
@@ -72,7 +74,8 @@ public class ZoomControl : MonoBehaviour {
             }
             else
             {
-                transform.position = new Vector3(Mathf.Lerp(transform.position.x, TargetPos.x -1.6f, speedX), TargetPos.y, -10);
+                transform.position = new Vector3(Mathf.Lerp(transform.position.x,
+                    TargetPos.x -1.6f, speedX), TargetPos.y, -10);
             }
 
             if (zoomSize > 2)
