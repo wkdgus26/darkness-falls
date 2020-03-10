@@ -16,7 +16,6 @@ public class ZoomControl : MonoBehaviour {
     public float speedX;
     public float speedY;
     private Vector3 originCamera;
-    private GameObject player;
 
     //public Camera camera;
     // Use this for initialization
