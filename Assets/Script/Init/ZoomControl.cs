@@ -7,6 +7,8 @@ public class ZoomControl : MonoBehaviour {
     public float zoomSize = 5.4f;
     [SerializeField]
     private GameObject miniGame;
+    public GameObject player;
+    public GameObject particle;
     public GameObject target;
     private Vector3 TargetPos;
     public float limitX;
@@ -18,7 +20,7 @@ public class ZoomControl : MonoBehaviour {
     // Use this for initialization
     void Start () {
         
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -80,6 +82,8 @@ public class ZoomControl : MonoBehaviour {
             count += 1;
             yield return null;
         }
+        player.SetActive(false);
+        particle.SetActive(false);
         miniGame.SetActive(true);
         this.transform.position = originCamera;
         zoomSize = 5.4f;

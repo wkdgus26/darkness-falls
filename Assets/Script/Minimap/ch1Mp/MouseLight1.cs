@@ -48,7 +48,6 @@ public class MouseLight1 : MonoBehaviour
                     hit = Physics2D.Raycast(ray.origin, ray.direction);
                     if (hit.collider.tag == "hopae")
                     {
-
                         mGame.SetActive(false);
                     }
                     else
