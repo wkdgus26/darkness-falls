@@ -605,7 +605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   msEvent: {fileID: 1190427254}
   hopae: {fileID: 1236565756}
-  textM: {fileID: 1064599671}
+  textM: {fileID: 0}
   samjok: {fileID: 1064599662}
   ani: {fileID: 0}
   rigid: {fileID: 0}
@@ -766,7 +766,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 176095781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.59, y: 42.6, z: -10}
+  m_LocalPosition: {x: -4.59, y: 11.92, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 167643487}
@@ -5115,7 +5115,6 @@ GameObject:
   - component: {fileID: 1064599667}
   - component: {fileID: 1064599669}
   - component: {fileID: 1064599670}
-  - component: {fileID: 1064599671}
   m_Layer: 0
   m_Name: SamJok5
   m_TagString: samjok
@@ -5284,19 +5283,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1064599671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1064599662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a3a24ea195ac4c4fbc12db8a56ad30f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  msEvent: {fileID: 1190427254}
-  textPop: {fileID: 1773225453}
 --- !u!1 &1091320235
 GameObject:
   m_ObjectHideFlags: 0
@@ -7351,8 +7337,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1574035047}
+  - component: {fileID: 1574035048}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: scriptManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7371,6 +7358,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1574035048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1574035046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7a4688c5a9c284aacf822a3bfe33e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talkText: {fileID: 1773225453}
+  mouseEv: {fileID: 0}
 --- !u!1 &1574136213
 GameObject:
   m_ObjectHideFlags: 0
@@ -7999,6 +7999,7 @@ GameObject:
   - component: {fileID: 1734652700}
   - component: {fileID: 1734652699}
   - component: {fileID: 1734652701}
+  - component: {fileID: 1734652702}
   m_Layer: 5
   m_Name: Next_Button
   m_TagString: next_button
@@ -8083,6 +8084,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!50 &1734652702
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1734652697}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1770895602
 GameObject:
   m_ObjectHideFlags: 0
@@ -8636,3 +8657,4 @@ MonoBehaviour:
   hopae: {fileID: 1262207691}
   dis: 5
   keyRock: {fileID: 1155405951}
+  player: {fileID: 0}

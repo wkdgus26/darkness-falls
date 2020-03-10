@@ -8,17 +8,11 @@ public class TextManager : MonoBehaviour {
     private MouseEvent msEvent;
     [SerializeField]
     private GameObject textPop;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    void Update()
+    {
         Talk();
-
     }
-
     public void Talk()
     {
         if (msEvent.isTalk)
