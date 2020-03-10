@@ -13,6 +13,7 @@ TagManager:
   - samjok
   - mGame1
   - key_hopae
+  - next_button
   layers:
   - Default
   - TransparentFX

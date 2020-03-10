@@ -9,6 +9,8 @@ public class MouseLight : MonoBehaviour {
     private Vector3 lightPosition;
     private Vector3 rockPosition;
     [SerializeField]
+    private ZoomControl zoomCon;
+    [SerializeField]
     private GameObject mGame;
     [SerializeField]
     private GameObject hopae;
@@ -49,9 +51,9 @@ public class MouseLight : MonoBehaviour {
                     hit = Physics2D.Raycast(ray.origin, ray.direction);
                     if (hit.collider.tag == "key_hopae")
                     {
-                        player.SetActive(true);
                         mGame.SetActive(false);
-                        
+                        zoomCon.particle.SetActive(true);
+                        zoomCon.player.SetActive(true);
                     }
                     else
                     {

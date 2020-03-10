@@ -8,7 +8,11 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField]
     private GameObject hopae;
     [SerializeField]
+    private TextManager textM;
+    [SerializeField]
     private GameObject samjok;
+    private CircleCollider2D hCCol;
+    private Rigidbody2D hRigid;
     private float cXPosition = 0f;
     private Camera camera;
     public Animator ani;
@@ -17,6 +21,8 @@ public class PlayerMovement : MonoBehaviour {
 
     void Start()
     {
+        hCCol = hopae.GetComponent<CircleCollider2D>();
+        hRigid = hopae.GetComponent<Rigidbody2D>();
         rigid = GetComponent<Rigidbody2D>();
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         ani = GetComponent<Animator>();
@@ -30,7 +36,7 @@ public class PlayerMovement : MonoBehaviour {
             if (msEvent.hit.collider.tag == "samjok" && !msEvent.isTalk)
             {
                 StopAllCoroutines();
-                msEvent.isTalk = true;
+                hRigid.gravityScale = 0;
                 StartCoroutine(moveSamjokCoroutine());
             }
         }
@@ -66,10 +72,12 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (transform.position.x < hopae.transform.position.x + 0.2f && transform.position.x > hopae.transform.position.x - 0.2f)
         {
+            hCCol.enabled = true;
             msEvent.isGame = true;
         }
         else
         {
+            hCCol.enabled = false;
             msEvent.isGame = false;
         }
     }
@@ -168,43 +176,46 @@ public class PlayerMovement : MonoBehaviour {
 
     IEnumerator moveSamjokCoroutine()
     {
-        if (gameObject.transform.position.x < samjok.transform.position.x - 0.7f)
+        if (gameObject.transform.position.x < samjok.transform.position.x - 1.5f)
         {
             ani.SetBool("LeftWalk", false);
             ani.SetBool("Idle", false);
             ani.SetBool("RightWalk", true);
-            while (gameObject.transform.position.x <= samjok.transform.position.x - 0.7f)
+            while (gameObject.transform.position.x <= samjok.transform.position.x - 1.5f)
             {
                 rigid.freezeRotation = false;
                 transform.position += Vector3.right * 2f * Time.deltaTime;
-                if (gameObject.transform.position.x >= samjok.transform.position.x - 0.8f)
+                if (gameObject.transform.position.x >= samjok.transform.position.x - 1.6f)
                 {
-                    ani.SetBool("RightWalk", false);
-                    ani.SetBool("Idle", true);
+                    //ani.SetBool("RightWalk", false);
+                    //ani.SetBool("Idle", true);
                 }
 
                 yield return null;
             }
         }
         
-        else if (gameObject.transform.position.x > samjok.transform.position.x - 0.7f)
+        else if (gameObject.transform.position.x > samjok.transform.position.x - 1.5f)
         {
 
             ani.SetBool("RightWalk", false);
             ani.SetBool("Idle", false);
             ani.SetBool("LeftWalk", true);
-            while (gameObject.transform.position.x >= samjok.transform.position.x - 0.7f)
+            while (gameObject.transform.position.x >= samjok.transform.position.x - 1.5f)
             {
                 rigid.freezeRotation = false;
                 transform.position += Vector3.left * 2f * Time.deltaTime;
-                if (gameObject.transform.position.x <= samjok.transform.position.x - 0.6f)
+                if (gameObject.transform.position.x <= samjok.transform.position.x - 1.4f)
                 {
                     ani.SetBool("LeftWalk", false);
-                    ani.SetBool("Idle", true);
+                    ani.SetBool("RightWalk", true);
+                    //ani.SetBool("Idle", true);
                 }
                 yield return null;
             }
         }
+
+        msEvent.isTalk = true;
     }
 
     IEnumerator limitRotation()
