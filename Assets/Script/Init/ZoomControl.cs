@@ -15,6 +15,7 @@ public class ZoomControl : MonoBehaviour {
     public float limitY;
     public float speedX;
     public float speedY;
+    private bool isZoom = false;
     private Vector3 originCamera;
 
     //public Camera camera;
@@ -48,15 +49,19 @@ public class ZoomControl : MonoBehaviour {
 
     public void ZoomIn()
     {
-        originCamera = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        StartCoroutine(ZoomInCoroutine());
+        if (!isZoom)
+        {
+            isZoom = !isZoom;
+            originCamera = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            StartCoroutine(ZoomInCoroutine());
+        }
     }
 
     IEnumerator ZoomInCoroutine()
     {
         int count=0;
         
-        while (count <400)
+        while (count <350)
         {/*
             if (count < 100)
             { transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime / 3f); }

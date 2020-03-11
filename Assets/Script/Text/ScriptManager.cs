@@ -10,21 +10,23 @@ public class ScriptManager : MonoBehaviour {
     [SerializeField]
     private GameObject talkText;
     [SerializeField]
-    private MouseEvent mouseEv;
+    private MouseEvent msEvent;
     void Start()
     {
-        mouseEv = GameObject.Find("gameManager").GetComponent<MouseEvent>();
     }
     void Update()
     {
-        if (mouseEv.isTalk && cnt < samTalk.Length)
+        if (msEvent.isTalk && cnt < samTalk.Length)
         {
             talkText.SetActive(true);
-            if(mouseEv.hit.collider.tag != null) {
+            if (msEvent.hit == true)
+            {
                 if (Input.GetMouseButtonDown(0))
                     ist = true;
-                if (mouseEv.hit.collider.tag == "next_button") {
-                    if (ist) { 
+                if (msEvent.hit.collider.tag == "next_button")
+                {
+                    if (ist)
+                    {
                         cnt++;
                         if (cnt < samTalk.Length)
                         {
@@ -35,7 +37,10 @@ public class ScriptManager : MonoBehaviour {
                 }
             }
         }
-        else if(cnt >= samTalk.Length)
+        else if (cnt >= samTalk.Length)
+        {
+            msEvent.isTalk = false;
             talkText.SetActive(false);
+        }
     }
 }
