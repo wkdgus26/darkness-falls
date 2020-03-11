@@ -5,7 +5,19 @@ using UnityEngine;
 public class FadeIn : MonoBehaviour {
 
     float time = 0;
+    /*
+    string rock = "rock";
+    public GameObject[] kk;
 
+    private void Start()
+    {
+        for (int i = 1; i <= 30; i++)
+        {
+            kk[i] = GameObject.Find(rock + i);
+        }
+
+    }
+    */
     // Update is called once per frame
     void Update()
     {

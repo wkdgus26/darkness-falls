@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D hRigid;
     private float cXPosition = 0f;
     private Camera camera;
+    private bool isT = false;
     public Animator ani;
     RaycastHit2D hit;
     public Rigidbody2D rigid;
@@ -31,10 +32,11 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (msEvent.hit == true)
+        if (msEvent.hit == true && !isT)
         {
             if (msEvent.hit.collider.tag == "samjok" && !msEvent.isTalk)
             {
+                isT = true; 
                 StopAllCoroutines();
                 hRigid.gravityScale = 0;
                 StartCoroutine(moveSamjokCoroutine());
@@ -45,6 +47,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0))
             {
+                Debug.Log("move");
                 StopAllCoroutines();
                 StartCoroutine("playerMove");
             }
@@ -176,6 +179,7 @@ public class PlayerMovement : MonoBehaviour {
 
     IEnumerator moveSamjokCoroutine()
     {
+        Debug.Log("move samjok");
         if (gameObject.transform.position.x < samjok.transform.position.x - 1.5f)
         {
             ani.SetBool("LeftWalk", false);
@@ -214,8 +218,8 @@ public class PlayerMovement : MonoBehaviour {
                 yield return null;
             }
         }
-
         msEvent.isTalk = true;
+
     }
 
     IEnumerator limitRotation()

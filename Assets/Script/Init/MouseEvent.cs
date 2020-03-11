@@ -37,8 +37,6 @@ public class MouseEvent : MonoBehaviour {
                 {
                     if (hit.collider.tag == "samjok")
                     {
-                        Debug.Log("samjok");
-                        isTalk = true;
                         isMGame1 = true;
                     }
                     else if (hit.collider.tag == "hopae" && isGame)

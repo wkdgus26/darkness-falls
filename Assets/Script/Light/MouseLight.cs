@@ -51,9 +51,7 @@ public class MouseLight : MonoBehaviour {
                     hit = Physics2D.Raycast(ray.origin, ray.direction);
                     if (hit.collider.tag == "key_hopae")
                     {
-                        mGame.SetActive(false);
-                        zoomCon.particle.SetActive(true);
-                        zoomCon.player.SetActive(true);
+                        StartCoroutine("GameEscapeCoroutine");
                     }
                     else
                     {
@@ -101,5 +99,20 @@ public class MouseLight : MonoBehaviour {
 
 
         }
+    }
+
+    IEnumerator GameEscapeCoroutine()
+    {
+        var height = 2 * Camera.main.orthographicSize;
+        var width = height * Camera.main.aspect;
+        Debug.Log(height + ", " + width);
+
+        hopae.transform.localScale = Vector3.Lerp(hopae.transform.localScale, new Vector3(1, 1, 0), Time.deltaTime);
+        yield return null;
+
+
+        mGame.SetActive(false);
+        zoomCon.particle.SetActive(true);
+        zoomCon.player.SetActive(true);
     }
 }
