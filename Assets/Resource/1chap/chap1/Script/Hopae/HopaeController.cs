@@ -8,6 +8,12 @@ public class HopaeController : MonoBehaviour {
     private CircleCollider2D hopCol;
     [SerializeField]
     private GameObject player;
+    [SerializeField]
+    private MouseEvent msEvent;
+    [SerializeField]
+    private BoxCollider2D sBCol;
+    [SerializeField]
+    private GameObject realHopae;
 	// Use this for initialization
 	void Start () {
         hopCol = gameObject.GetComponent<CircleCollider2D>();
@@ -15,7 +21,7 @@ public class HopaeController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        
 	}
 
     void OnTriggerEnter2D(Collider2D other)
@@ -29,6 +35,8 @@ public class HopaeController : MonoBehaviour {
 
     public void hopaeMove()
     {
+        GetComponent<SpriteRenderer>().enabled = true;
+        msEvent.isMGame1 = false;
         StartCoroutine(moveCoroutine());
     }
 
@@ -38,11 +46,18 @@ public class HopaeController : MonoBehaviour {
         float count = 0;
         while (count < 100)
         {
-            particle.transform.position = Vector3.Lerp(particle.transform.position, player.transform.position, Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, player.transform.position, Time.deltaTime);
             yield return null;
             count++;
         }
-
+        //particle.SetActive(false);
+        //Destroy(particle);
+        msEvent.isMStart = false;
+        msEvent.isGame = false;
+        msEvent.isMGameEnd = true;
+        sBCol.enabled = true;
+        realHopae.SetActive(true);
+        Destroy(this.gameObject);
     }
 
     IEnumerator delayCoroutine()

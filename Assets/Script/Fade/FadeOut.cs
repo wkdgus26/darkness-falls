@@ -1,19 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FadeOut : MonoBehaviour {
 
-    float time = 3;
+    public float time = 3;
 
     // Update is called once per frame
     void Update()
     {
         if (time > 0f)
         {
-            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, time / 3);
+            GetComponent<Image>().color = new Color(0, 0, 0, time / 3);
+            time -= Time.deltaTime;
         }
-        time -= Time.deltaTime;
-
     }
 }

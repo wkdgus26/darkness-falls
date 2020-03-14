@@ -1,17 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class FadeIn : MonoBehaviour {
-
+public class mlml : MonoBehaviour {
     float time = 0;
     // Update is called once per frame
     void Update()
     {
         if (time < 3f)
         {
-            GetComponent<Image>().color = new Color(0, 0, 0, time / 3);
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, time / 3);
         }
         time += Time.deltaTime;
 
