@@ -15,6 +15,8 @@ public class MouseEvent : MonoBehaviour {
     public bool isGame = false;
     public bool isStart = false;
     public bool isMStart = false;
+    public bool isMGameEnd = false;
+
 
     public GameObject miniGame;
     private Camera camera;

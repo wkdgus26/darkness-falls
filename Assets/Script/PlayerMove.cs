@@ -22,13 +22,42 @@ public class PlayerMove : MonoBehaviour {
             tarPos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
             Ray2D ray = new Ray2D(tarPos, Vector2.zero);
             hit = Physics2D.Raycast(ray.origin, ray.direction);
+            StopAllCoroutines();
             StartCoroutine(Movement());
         }
 	}
 
     IEnumerator Movement()
     {
-        yield return null;
+        if (gameObject.transform.position.x < tarPos.x)
+        {
+            aniState(false, false, true);
+            while (gameObject.transform.position.x <= tarPos.x)
+            {
+
+                transform.position += Vector3.right * 2f * Time.deltaTime;
+                if (gameObject.transform.position.x >= tarPos.x)
+                {
+                    aniState(false, true, false);
+                }
+
+                yield return null;
+            }
+        }
+        else if (gameObject.transform.position.x > tarPos.x)
+        {
+            aniState(true, false, false);
+            while (gameObject.transform.position.x >= tarPos.x)
+            {
+
+                transform.position += Vector3.left * 2f * Time.deltaTime;
+                if (gameObject.transform.position.x <= tarPos.x)
+                {
+                    aniState(false, true, false);
+                }
+                yield return null;
+            }
+        }
     }
 
     void aniState(bool lWalk, bool Idle, bool rWalk)

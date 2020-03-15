@@ -8,8 +8,6 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField]
     private GameObject hopae;
     [SerializeField]
-    private TextManager textM;
-    [SerializeField]
     private GameObject samjok;
     private BoxCollider2D sBCol;
     private CircleCollider2D hCCol;
@@ -22,6 +20,8 @@ public class PlayerMovement : MonoBehaviour {
     public Rigidbody2D rigid;
     [SerializeField]
     private ScriptManager sM;
+    [SerializeField]
+    private SceneController sceneM;
 
     void Start()
     {
@@ -39,24 +39,24 @@ public class PlayerMovement : MonoBehaviour {
         Ray2D ray = new Ray2D(mousePos, Vector2.zero);
         hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-        if (hit == true && !msEvent.isMGame1)
+        if (hit == true && (!msEvent.isMGame1 || msEvent.isMGameEnd))
         {
             if (Input.GetMouseButtonDown(0))
             {
                 if (hit.collider.tag == "samjok" && !msEvent.isTalk)
                 {
                     StopAllCoroutines();
-                    hRigid.gravityScale = 0;
+                    if(hRigid == true) hRigid.gravityScale = 0;
                     StartCoroutine(moveSamjokCoroutine());
                 }
             }
+            
         }
 
         else if (!msEvent.isTalk && !msEvent.isFly && msEvent.isStart && !msEvent.isMStart)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("move");
                 StopAllCoroutines();
                 StartCoroutine("playerMove");
             }
@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour {
             anistop(false, true, false);
         }
         
-        if (msEvent.isMGame1)
+        if (msEvent.isMGame1 && sceneM.isChapEnd == false)
         {
             GameZone();
         }
@@ -174,7 +174,6 @@ public class PlayerMovement : MonoBehaviour {
 
     IEnumerator moveSamjokCoroutine()
     {
-        Debug.Log("move samjok");
         rigid.freezeRotation = false;
         if (gameObject.transform.position.x < samjok.transform.position.x - 1.5f)
         {
@@ -208,11 +207,18 @@ public class PlayerMovement : MonoBehaviour {
             }
 
         }
-
+        
         sBCol.enabled = false;
         msEvent.isTalk = true;
-        msEvent.isMGame1 = true;
-
+        if (msEvent.isMGameEnd)
+        {
+            sceneM.isChapEnd = true;
+            Debug.Log("samjok ani");
+        }
+        else
+        {
+            msEvent.isMGame1 = true;
+        }
     }
 
     IEnumerator limitRotation()

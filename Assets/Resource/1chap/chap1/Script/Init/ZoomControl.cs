@@ -9,6 +9,7 @@ public class ZoomControl : MonoBehaviour {
     private GameObject miniGame;
     public GameObject player;
     public GameObject particle;
+    public CircleCollider2D hCCol;
     public GameObject target;
     private Vector3 TargetPos;
     public float limitX;
@@ -26,11 +27,13 @@ public class ZoomControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
-        TargetPos = new Vector3(
-                Mathf.Clamp(target.transform.position.x, zoomSize - limitX, 5.88f),
-                Mathf.Clamp(target.transform.position.y, zoomSize - limitY, 1.27f),
-                -10f);
+        if (target == true)
+        {
+            TargetPos = new Vector3(
+                    Mathf.Clamp(target.transform.position.x, zoomSize - limitX, 5.88f),
+                    Mathf.Clamp(target.transform.position.y, zoomSize - limitY, 1.27f),
+                    -10f);
+        }
         if (Input.GetKeyDown("1"))
         {
             originCamera = new Vector3(transform.position.x, transform.position.y, transform.position.z);
@@ -90,10 +93,11 @@ public class ZoomControl : MonoBehaviour {
             yield return null;
         }
         player.SetActive(false);
-        particle.SetActive(false);
         miniGame.SetActive(true);
         this.transform.position = originCamera;
         zoomSize = 5.4f;
-        particle.transform.parent = null;
+        hCCol.enabled = false;
+        //particle.transform.parent = null;
+        particle.SetActive(false);
     }
 }
