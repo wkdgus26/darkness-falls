@@ -18,8 +18,12 @@ public class ScriptManager : MonoBehaviour {
     private MouseEvent msEvent;
     [SerializeField]
     private GameObject particle;
+    [SerializeField]
+    private PlayerMovement pMove;
     public BoxCollider2D mBCol1;
     public BoxCollider2D mBCol2;
+    public GameObject qText;
+    public SpriteFadeOut qFadeOut;
 
     void Start()
     {
@@ -54,21 +58,24 @@ public class ScriptManager : MonoBehaviour {
         {
             mBCol1.enabled = false;
             mBCol2.enabled = false;
-            tTalk = true;
             talkText.SetActive(true);
             talkText.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = samTalk1;
             if (msEvent.hit == true)
             {
                 if (msEvent.hit.collider.tag == "next_button")
                 {
+                    pMove.enabled = false;
                     talkText.SetActive(false);
                     msEvent.isTalk = false;
+                    pMove.enabled = true;
                 }
             }
         }
         else if (cnt >= samTalk.Length && !tTalk)
         {
-            msEvent.isTalk = false;
+            qText.SetActive(true);
+            tTalk = true;
+            StartCoroutine(delayCoroutine());
             talkText.SetActive(false);
 
             if (isParticle)
@@ -80,5 +87,15 @@ public class ScriptManager : MonoBehaviour {
             }
         }
         
+    }
+
+    IEnumerator delayCoroutine()
+    {
+        
+        yield return new WaitForSeconds(4f);
+        qFadeOut.enabled = true;
+        msEvent.isTalk = false;
+        yield return new WaitForSeconds(3f);
+        qText.SetActive(false);
     }
 }

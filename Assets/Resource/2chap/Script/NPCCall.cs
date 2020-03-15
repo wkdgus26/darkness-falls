@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NPCCall : MonoBehaviour {
     public bool isNPC = false;
+    public PlayerMove pMove;
     public GameObject npc;
     private Animator ani;
 	// Use this for initialization
@@ -18,6 +19,7 @@ public class NPCCall : MonoBehaviour {
             npc.SetActive(true);
             
         }
+        pMove.StopAllCoroutines();
         StartCoroutine(CheckAnimationState());
     }
 
