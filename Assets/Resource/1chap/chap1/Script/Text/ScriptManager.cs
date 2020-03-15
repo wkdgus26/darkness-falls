@@ -68,6 +68,7 @@ public class ScriptManager : MonoBehaviour {
                     talkText.SetActive(false);
                     msEvent.isTalk = false;
                     pMove.enabled = true;
+                    GameObject.Find("SamJok5").GetComponent<AniScript>().EndFlying();
                 }
             }
         }
@@ -84,6 +85,7 @@ public class ScriptManager : MonoBehaviour {
                 mBCol2.enabled = true;
                 isParticle = false;
                 particle.SetActive(true);
+                
             }
         }
         
