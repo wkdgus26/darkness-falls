@@ -5,7 +5,7 @@ using UnityEngine;
 public class StartCameraPos : MonoBehaviour {
 
     [SerializeField]
-    private MouseEvent msEvent;
+    private GuideManager GManger;
     [SerializeField]
     private GameObject menu;
     public float speed = 6;
@@ -30,6 +30,6 @@ public class StartCameraPos : MonoBehaviour {
             }
         }
         menu.SetActive(true);
-        msEvent.isStart = true;
+        GManger.isGuide = true;
     }
 }
