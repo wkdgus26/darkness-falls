@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class FadeOut : MonoBehaviour {
 
-    public float time = 3;
+    public float time;
 
+    private void OnEnable()
+    {
+        time = 3;
+    }
     // Update is called once per frame
     void Update()
     {

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteFadeIn : MonoBehaviour {
-    float time = 0;
+    public float time;
     // Update is called once per frame
     private void Start()
     {
+        time = 0;
         GetComponent<SpriteRenderer>().enabled = false;
     }
     void Update()

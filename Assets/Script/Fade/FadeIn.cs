@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class FadeIn : MonoBehaviour {
 
-    float time = 0;
+    float time;
+    private void OnEnable()
+    {
+        time = 0;
+    }
     // Update is called once per frame
     void Update()
     {

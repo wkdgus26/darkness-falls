@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour {
     private GameObject hopae;
     [SerializeField]
     private MouseEvent msEvent;
+    public GuideManager gManager;
 
     // Use this for initialization
     void Start () {
@@ -42,5 +43,8 @@ public class Movement : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         msEvent.isFly = false;
+        gManager.isGuide = true;
+        gManager.gNum++;
+        gManager.time = 0;
     }
 }

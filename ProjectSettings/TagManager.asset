@@ -14,6 +14,7 @@ TagManager:
   - mGame1
   - key_hopae
   - next_button
+  - cancel_button
   layers:
   - Default
   - TransparentFX
