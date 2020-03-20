@@ -29,7 +29,7 @@ public class StartCameraPos : MonoBehaviour {
                 yield return null;
             }
         }
-        transform.position = new Vector3(-4.53f, -0.58f, -10);
+        transform.position = new Vector3(-4.59f, -0.58f, -10);
         menu.SetActive(true);
         GManger.isGuide = true;
     }
