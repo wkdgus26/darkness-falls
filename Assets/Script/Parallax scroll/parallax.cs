@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class parallax : MonoBehaviour {
     private float startpos;
-    public GameObject cam;
+    public GameObject player;
     public float parallaxEffect;
     
 	// Use this for initialization
 	void Start () {
         startpos = transform.position.x;
-
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        float dist = (cam.transform.position.x * parallaxEffect);
+        float dist = (player.transform.position.x * parallaxEffect);
 
-        transform.position = new Vector3(Mathf.Clamp(startpos + dist, startpos, startpos + 5f), transform.position.y, transform.position.z);
+        transform.position = new Vector3(startpos - dist, transform.position.y, transform.position.z);
 	}
 }

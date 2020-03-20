@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ScriptManager : MonoBehaviour {
-    private string[] samTalk = { "큰일이다. 네게 전해줄 호패를 개울에 빠뜨렸어..", "아기상어뚜루루뚜"};
-    private string samTalk1 = "고맙다";
+    private string[] samTalk = { "큰일이다. 네게 전해줄 호패를 개울에 빠뜨렸어..", "미안하지만 호패를 직접 찾아가야 할 것 같아."};
+    private string samTalk1 = "다행이다. 무사히 다녀오길 바래.";
 
     public int cnt = 0;
 
