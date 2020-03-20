@@ -1031,7 +1031,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 653649056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1857423416}
@@ -2033,6 +2033,7 @@ GameObject:
   - component: {fileID: 1727898168}
   - component: {fileID: 1727898167}
   - component: {fileID: 1727898170}
+  - component: {fileID: 1727898171}
   m_Layer: 0
   m_Name: muk
   m_TagString: Untagged
@@ -2130,7 +2131,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNPC: 0
   pMove: {fileID: 1796719743}
+  cs: {fileID: 1727898171}
   npc: {fileID: 1139796148}
+--- !u!114 &1727898171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727898166}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ff50a1c2f793c4a8ebc83a5ef47028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeTime: 0.6
+  shakeAmount: 0.25
 --- !u!1 &1781245210
 GameObject:
   m_ObjectHideFlags: 0
