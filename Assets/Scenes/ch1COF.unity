@@ -8238,7 +8238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce51d242b0d231b4cae2efe398ccdbc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 127002582}
+  player: {fileID: 127002582}
   parallaxEffect: 0.009
 --- !u!1 &1726842468
 GameObject:
@@ -8327,8 +8327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce51d242b0d231b4cae2efe398ccdbc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 127002582}
-  parallaxEffect: 0.02
+  player: {fileID: 127002582}
+  parallaxEffect: 0.01
 --- !u!1 &1770895602
 GameObject:
   m_ObjectHideFlags: 0
@@ -8641,7 +8641,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1754687986408834, guid: 6b5825f259401de40b157836e80e41b7, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198734024908738210, guid: 6b5825f259401de40b157836e80e41b7,
         type: 2}

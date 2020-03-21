@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCCall : MonoBehaviour {
+public class NpcCall : MonoBehaviour {
     public bool isNPC = false;
     public PlayerMove pMove;
+    public CameraShake cs;
+
     public GameObject npc;
     private Animator ani;
 	// Use this for initialization
 	void Start () {
         ani = GetComponent<Animator>();
-	}
+        cs.enabled = true;
+    }
 	
 	// Update is called once per frame
 	void Update ()

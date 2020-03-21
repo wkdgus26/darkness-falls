@@ -62,36 +62,37 @@ public class ZoomControl : MonoBehaviour {
 
     IEnumerator ZoomInCoroutine()
     {
-        int count=0;
-        
-        while (count <350)
-        {/*
-            if (count < 100)
-            { transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime / 3f); }
-            else if (count < 200)
-            { transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime / 2f); }
-            else
-            { transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime); }
-            */
-         //transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime * speed);
-         //transform.position = new Vector3(Mathf.Lerp(transform.position.x, TargetPos.x, Time.deltaTime * speedX), Mathf.Lerp(transform.position.y, TargetPos.y, Time.deltaTime * speedY), -10);
-            if (zoomSize > 3.5)
-            {
-                transform.position = new Vector3(TargetPos.x, TargetPos.y, -10);
-            }
-            else
-            {
-                transform.position = new Vector3(Mathf.Lerp(transform.position.x,
-                    TargetPos.x -1.6f, speedX), TargetPos.y, -10);
-            }
+        //int count=0;
 
-            if (zoomSize > 2)
-            {
-                zoomSize -= Time.deltaTime;
-            }
-            count += 1;
-            yield return null;
-        }
+        //while (count <350)
+        //{/*
+        //    if (count < 100)
+        //    { transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime / 3f); }
+        //    else if (count < 200)
+        //    { transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime / 2f); }
+        //    else
+        //    { transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime); }
+        //    */
+        // //transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime * speed);
+        // //transform.position = new Vector3(Mathf.Lerp(transform.position.x, TargetPos.x, Time.deltaTime * speedX), Mathf.Lerp(transform.position.y, TargetPos.y, Time.deltaTime * speedY), -10);
+        //    if (zoomSize > 3.5)
+        //    {
+        //        transform.position = new Vector3(TargetPos.x, TargetPos.y, -10);
+        //    }
+        //    else
+        //    {
+        //        transform.position = new Vector3(Mathf.Lerp(transform.position.x,
+        //            TargetPos.x -1.6f, speedX), TargetPos.y, -10);
+        //    }
+
+        //    if (zoomSize > 2)
+        //    {
+        //        zoomSize -= Time.deltaTime;
+        //    }
+        //    count += 1;
+        //    yield return null;
+        //}
+        yield return null;
         player.SetActive(false);
         miniGame.SetActive(true);
         this.transform.position = originCamera;
