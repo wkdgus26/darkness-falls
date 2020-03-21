@@ -29,7 +29,6 @@ public class HopaeController : MonoBehaviour {
         if (other.gameObject.CompareTag("map"))
         {
             StartCoroutine(delayCoroutine());
-            GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 
@@ -64,6 +63,7 @@ public class HopaeController : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.1f);
         hopCol.isTrigger = false;
+        particle.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)

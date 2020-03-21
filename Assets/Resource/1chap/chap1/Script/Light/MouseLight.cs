@@ -110,9 +110,9 @@ public class MouseLight : MonoBehaviour {
     {
         isFindH = true;
         int count = 0;
-        hit.transform.GetComponent<SpriteRenderer>().sortingOrder = selecLayer;
+        hit.transform.GetComponent<SpriteRenderer>().sortingOrder = 7;
         var height =  Camera.main.orthographicSize/2;
-        var width =  Camera.main.aspect/2;
+        var width =  Camera.main.aspect;
         while (count < 300)
         {
             lightPosition = new Vector3(hopae.transform.localPosition.x, hopae.transform.localPosition.y, -3.5f);
