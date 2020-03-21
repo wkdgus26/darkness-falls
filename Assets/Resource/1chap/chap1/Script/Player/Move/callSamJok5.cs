@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class callSamJok5 : MonoBehaviour {
     public GameObject samjok5;
-    
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("EventTrig1"))

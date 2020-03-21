@@ -7,8 +7,6 @@ public class GuideManager : MonoBehaviour {
     [SerializeField]
     private MouseEvent msEvent;
     [SerializeField]
-    private FadeOut fOut;
-    [SerializeField]
     private GameObject ground;
     [SerializeField]
     private GameObject guide1;
@@ -18,9 +16,9 @@ public class GuideManager : MonoBehaviour {
     private GameObject guide3;
     public int gNum = 0;
     public bool isGuide = false;
+    private float time = 0;
 
     private Vector3 mousePos;
-    public float time=0;
     public RaycastHit2D hit;
     // Use this for initialization
     void Start () {
@@ -31,12 +29,13 @@ public class GuideManager : MonoBehaviour {
 	void Update () {
         if (isGuide)
         {
-            time += Time.deltaTime;
             if (gNum == 0)
             {
+                time += Time.deltaTime;
                 ground.SetActive(true);
-                if(time >3.5)
-                    guide1.SetActive(true);
+                guide1.SetActive(true);
+                if (time > 3)
+                    gNum++;
             }
             else if (gNum == 1)
             {
@@ -46,31 +45,22 @@ public class GuideManager : MonoBehaviour {
             else if (gNum == 2)
             {
                 guide2.SetActive(false);
-                fOut.enabled = true;
-                if (time > 3)
-                {
-                    msEvent.isStart = true;
-                    isGuide = false;
-                    fOut.enabled = false;
-                    ground.SetActive(false);
-                }
+                msEvent.isStart = true;
+                isGuide = false;
+                ground.SetActive(false);
             }
             else if (gNum == 3)
             {
                 msEvent.isStart = false;
                 ground.SetActive(true);
-                if (time > 3.5)
-                    guide3.SetActive(true);
+                guide3.SetActive(true);
             }
             else
             {
                 guide3.SetActive(false);
-                fOut.enabled = true;
-                if (time > 3)
-                {
-                    msEvent.isStart = true;
-                    isGuide = false;
-                }
+                msEvent.isStart = true;
+                ground.SetActive(false);
+                isGuide = false;
             }
             if (Input.GetMouseButtonDown(0))
             {
@@ -82,7 +72,6 @@ public class GuideManager : MonoBehaviour {
                     if (hit.collider.tag == "cancel_button")
                     {
                         gNum++;
-                        time = 0;
                     }
                 }
             }
