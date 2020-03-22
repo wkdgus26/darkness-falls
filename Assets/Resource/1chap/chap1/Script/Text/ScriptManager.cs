@@ -97,7 +97,7 @@ public class ScriptManager : MonoBehaviour {
         yield return new WaitForSeconds(4f);
         qFadeOut.enabled = true;
         msEvent.isTalk = false;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         qText.SetActive(false);
     }
 }

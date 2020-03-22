@@ -16,6 +16,8 @@ TagManager:
   - next_button
   - cancel_button
   - Dialog
+  - forward_button
+  - backword_button
   layers:
   - Default
   - TransparentFX

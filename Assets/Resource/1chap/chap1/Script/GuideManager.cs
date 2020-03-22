@@ -31,28 +31,19 @@ public class GuideManager : MonoBehaviour {
         {
             if (gNum == 0)
             {
-                time += Time.deltaTime;
                 ground.SetActive(true);
                 guide1.SetActive(true);
-                if (time > 3)
-                    gNum++;
+                guide2.SetActive(false);
             }
             else if (gNum == 1)
             {
                 guide1.SetActive(false);
+                guide3.SetActive(false);
                 guide2.SetActive(true);
             }
             else if (gNum == 2)
             {
                 guide2.SetActive(false);
-                msEvent.isStart = true;
-                isGuide = false;
-                ground.SetActive(false);
-            }
-            else if (gNum == 3)
-            {
-                msEvent.isStart = false;
-                ground.SetActive(true);
                 guide3.SetActive(true);
             }
             else
@@ -72,6 +63,14 @@ public class GuideManager : MonoBehaviour {
                     if (hit.collider.tag == "cancel_button")
                     {
                         gNum++;
+                    }
+                    if (hit.collider.tag == "forward_button")
+                    {
+                        gNum++;
+                    }
+                    if (hit.collider.tag == "backword_button")
+                    {
+                        gNum--;
                     }
                 }
             }
