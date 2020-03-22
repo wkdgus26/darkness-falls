@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour {
             else if (gameObject.transform.rotation.z > 0.4 || gameObject.transform.rotation.z < -0.4)
             {
                 rigid.freezeRotation = true;
-                //StartCoroutine("limitRotation");
+                StartCoroutine("limitRotation");
             }
         }
         if(msEvent.isFly)
@@ -105,7 +105,7 @@ public class PlayerMovement : MonoBehaviour {
 
             if (hit.collider.tag == "mGame1")
             {
-                //rigid.freezeRotation = false;
+                rigid.freezeRotation = false;
                 if (gameObject.transform.position.x < hopae.transform.position.x)
                 {
                     anistop(false, false, true);
@@ -140,7 +140,7 @@ public class PlayerMovement : MonoBehaviour {
 
         else 
         {
-           //rigid.freezeRotation = false;
+           rigid.freezeRotation = false;
             if (gameObject.transform.position.x < mousePos.x)
             {
                 anistop(false, false, true);
@@ -175,7 +175,7 @@ public class PlayerMovement : MonoBehaviour {
 
     IEnumerator moveSamjokCoroutine()
     {
-        //rigid.freezeRotation = false;
+        rigid.freezeRotation = false;
         if (gameObject.transform.position.x < samjok.transform.position.x - 1.5f)
         {
             anistop(false, false, true);

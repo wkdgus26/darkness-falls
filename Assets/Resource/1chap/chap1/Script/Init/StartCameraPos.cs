@@ -8,7 +8,7 @@ public class StartCameraPos : MonoBehaviour {
     private GuideManager GManger;
     [SerializeField]
     private GameObject menu;
-    public float speed = 6;
+    public float speed;
 	// Use this for initialization
 	void Start () {
         StartCoroutine(StartCameraCoroutine());
@@ -24,6 +24,7 @@ public class StartCameraPos : MonoBehaviour {
         {
             while (gameObject.transform.position.y >= -0.5f)
             {
+                speed -= Time.deltaTime * 1.1f;
                 transform.position += Vector3.down * speed * Time.deltaTime;
 
                 yield return null;
