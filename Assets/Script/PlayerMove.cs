@@ -29,6 +29,8 @@ public class PlayerMove : MonoBehaviour {
 
     IEnumerator Movement()
     {
+        float distance = 0f;
+        
         playPos = transform.position;
         if (gameObject.transform.position.x < tarPos.x)
         {
@@ -36,9 +38,16 @@ public class PlayerMove : MonoBehaviour {
             while (gameObject.transform.position.x <= tarPos.x)
             {
                 transform.position += Vector3.right * 2f * Time.deltaTime;
+                if (ray.hit == true && ray.hit.transform.name == "npc")
+                    distance = Vector3.Distance(transform.position, ray.hit.transform.position);
                 if (gameObject.transform.position.x >= tarPos.x)
                 {
-                    isAnime = true;
+                    if (ray.hit)    // hit Null Object 가 아니면
+                        if (ray.hit.collider.name == "npc" && distance <= 1f)   //hit한 오브젝트의 이름이 npc이고 둘의 거리가 1 이하이면
+                        {
+                            isAnime = true; //애니메 true
+                        }
+                    Debug.Log(distance);
                     aniState(false, true, false);
                 }
 
@@ -52,9 +61,16 @@ public class PlayerMove : MonoBehaviour {
             {
 
                 transform.position += Vector3.left * 2f * Time.deltaTime;
+                if (ray.hit == true && ray.hit.transform.name == "npc")
+                    distance = Vector3.Distance(transform.position, ray.hit.transform.position);
                 if (gameObject.transform.position.x <= tarPos.x)
                 {
-                    isAnime = true;
+                    if (ray.hit)    // hit Null Object 가 아니면
+                        if (ray.hit.collider.name == "npc" && distance <= 1f)   //hit한 오브젝트의 이름이 npc이고 둘의 거리가 1 이하이면
+                        {
+                            isAnime = true; //애니메 true
+                        }
+                    Debug.Log(distance);
                     aniState(false, true, false);
                 }
                 yield return null;
@@ -68,5 +84,4 @@ public class PlayerMove : MonoBehaviour {
         ani.SetBool("Idle", Idle);
         ani.SetBool("RightWalk", rWalk);
     }
-
 }
