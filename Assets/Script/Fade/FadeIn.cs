@@ -18,6 +18,5 @@ public class FadeIn : MonoBehaviour {
             GetComponent<Image>().color = new Color(0, 0, 0, time / 3);
         }
         time += Time.deltaTime;
-
     }
 }

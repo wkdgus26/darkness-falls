@@ -47,6 +47,7 @@ public class raykast : MonoBehaviour {
                     }
                     else
                     {
+                        StartCoroutine(waitTime());
                         (ts.storyObj.transform.GetChild(2).GetChild(0).
                             GetComponent<Text>().text) = talkScript.storyTalk[talkScript.talkCount++];
                     }
@@ -58,5 +59,10 @@ public class raykast : MonoBehaviour {
             ts.storyObj.SetActive(true);
             playerScript.isAnime = false;
         }
+    }
+    IEnumerator waitTime()
+    {
+        yield return new WaitForSecondsRealtime(4f);
+        Debug.Log("Hello");
     }
 }
