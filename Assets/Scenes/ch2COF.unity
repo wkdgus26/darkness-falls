@@ -645,6 +645,7 @@ MonoBehaviour:
   isClick: 0
   ray: {fileID: 0}
   isAnime: 0
+  talkDialog: {fileID: 0}
 --- !u!50 &287923332
 Rigidbody2D:
   serializedVersion: 4
@@ -1436,8 +1437,8 @@ GameObject:
   m_Component:
   - component: {fileID: 653649057}
   - component: {fileID: 653649060}
-  - component: {fileID: 653649058}
   - component: {fileID: 653649059}
+  - component: {fileID: 653649058}
   m_Layer: 0
   m_Name: Callmugok
   m_TagString: Untagged
@@ -2494,8 +2495,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPos: {x: 0, y: 0}
-  playerScript: {fileID: 0}
-  ts: {fileID: 0}
+  playerScript: {fileID: 1796719743}
+  ts: {fileID: 284787251}
   hopae: {fileID: 346404964}
 --- !u!1 &1476777919
 GameObject:
@@ -3378,6 +3379,7 @@ MonoBehaviour:
   isClick: 0
   ray: {fileID: 0}
   isAnime: 0
+  talkDialog: {fileID: 1630672877}
 --- !u!1 &1812894177
 GameObject:
   m_ObjectHideFlags: 0

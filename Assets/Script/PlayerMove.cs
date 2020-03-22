@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour {
     public raykast ray;
     private Animator ani;
     public bool isAnime = false;
+    public GameObject talkDialog;
 	// Use this for initialization
 	void Start () {
         ray = GameObject.Find("RayCastObject").GetComponent<raykast>();
@@ -19,10 +20,12 @@ public class PlayerMove : MonoBehaviour {
 	void Update () {
         if (isClick) {
             isClick = false;
-            tarPos = ray.targetPos;
+            if (!talkDialog.activeSelf) { 
+                tarPos = ray.targetPos;
             
-            StopAllCoroutines();
-            StartCoroutine(Movement());
+                StopAllCoroutines();
+                StartCoroutine(Movement());
+            }
         }
 
     }
@@ -43,7 +46,7 @@ public class PlayerMove : MonoBehaviour {
                 if (gameObject.transform.position.x >= tarPos.x)
                 {
                     if (ray.hit)    // hit Null Object 가 아니면
-                        if (ray.hit.collider.name == "npc" && distance <= 1f)   //hit한 오브젝트의 이름이 npc이고 둘의 거리가 1 이하이면
+                        if (ray.hit.collider.name == "npc" && distance <= 1.2f)   //hit한 오브젝트의 이름이 npc이고 둘의 거리가 1 이하이면
                         {
                             isAnime = true; //애니메 true
                         }
@@ -66,7 +69,7 @@ public class PlayerMove : MonoBehaviour {
                 if (gameObject.transform.position.x <= tarPos.x)
                 {
                     if (ray.hit)    // hit Null Object 가 아니면
-                        if (ray.hit.collider.name == "npc" && distance <= 1f)   //hit한 오브젝트의 이름이 npc이고 둘의 거리가 1 이하이면
+                        if (ray.hit.collider.name == "npc" && distance <= 1.2f)   //hit한 오브젝트의 이름이 npc이고 둘의 거리가 1 이하이면
                         {
                             isAnime = true; //애니메 true
                         }

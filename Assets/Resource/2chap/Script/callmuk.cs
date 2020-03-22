@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MukCall : MonoBehaviour {
+public class callmuk : MonoBehaviour {
     public GameObject muk;
 
     void OnTriggerEnter2D(Collider2D other)
