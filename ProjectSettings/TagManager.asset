@@ -15,6 +15,7 @@ TagManager:
   - key_hopae
   - next_button
   - cancel_button
+  - Dialog
   layers:
   - Default
   - TransparentFX
