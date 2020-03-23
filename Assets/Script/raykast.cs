@@ -9,6 +9,8 @@ public class raykast : MonoBehaviour {
     public PlayerMove playerScript;
     public talkScript ts;
     private GameObject playerObject;
+    public GameObject hopae;
+
     void Start()
     {
         playerScript = GameObject.Find("player").GetComponent<PlayerMove>();
@@ -34,35 +36,59 @@ public class raykast : MonoBehaviour {
                         ts.storyObj.SetActive(true);
                     else
                     {
+                        targetPos = new Vector2(targetPos.x - .5f, targetPos.y);
                         playerScript.isClick = true;
-                        targetPos = new Vector2(targetPos.x - 1f, targetPos.y);
                     }
                 }
-                if(hit.collider.name == "Next_Button" && !talkScript.story1)
+                else if(hit.collider.name == "Next_Button" && !talkScript.story1)   //나중에 미션2를 위해 수정해야 할듯
                 {
-                    if (talkScript.talkCount >= talkScript.storyTalk.Length)
+                    if (talkScript.talkCount > talkScript.storyTalk.Length - 1)
                     {
                         ts.storyObj.SetActive(false);
                         talkScript.story1 = true;
                     }
                     else
                     {
-                        StartCoroutine(waitTime());
-                        (ts.storyObj.transform.GetChild(2).GetChild(0).
-                            GetComponent<Text>().text) = talkScript.storyTalk[talkScript.talkCount++];
+                        if(!talkScript.story1)
+                            StartCoroutine(FadewaitTime());
                     }
                 }
             }
         }
+        /*
+         * 
+         * playerObject.transform.position.x <= hit.transform.position.x - 1.2f &&
+         * playerObject.transform.position.x >= hit.transform.position.x + 1.2f
+        */
         if (playerScript.isAnime && !talkScript.story1)
         {
+
             ts.storyObj.SetActive(true);
             playerScript.isAnime = false;
         }
     }
-    IEnumerator waitTime()
+    IEnumerator FadewaitTime()
     {
-        yield return new WaitForSecondsRealtime(4f);
-        Debug.Log("Hello");
+        //호패를 부모에게서 떼어냄
+        hopae.transform.parent = null;
+        hopae.SetActive(false);
+        hopae.transform.position = new Vector3(0, 0, 0);
+        hopae.transform.localScale = new Vector3(2, 2, 1);
+        hopae.SetActive(true);
+        hopae.GetComponent<SpriteFadeIn>().enabled = true;
+        yield return new WaitForSeconds(3f);
+        hopae.GetComponent<SpriteFadeIn>().enabled = false;
+        yield return new WaitForSeconds(1f);
+        /*
+         * 맘에 안들면 아래 두줄 지우고
+         * 시작
+         */ 
+        hopae.GetComponent<SpriteFadeOut>().enabled = true;
+        yield return new WaitForSeconds(3f);
+        Destroy(hopae);
+
+        if(talkScript.talkCount < talkScript.storyTalk.Length)
+            (ts.storyObj.transform.GetChild(2).GetChild(0).
+                            GetComponent<Text>().text) = talkScript.storyTalk[talkScript.talkCount++];
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NpcCall : MonoBehaviour {
+public class callnpc : MonoBehaviour {
     public bool isNPC = false;
     public PlayerMove pMove;
     public CameraShake cs;
