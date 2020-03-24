@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
+    [SerializeField]
+    private StateManager state;
     public bool isClick = false;
     private Vector2 playPos;
     private Vector2 tarPos;
     public raykast ray;
-    private Animator ani;
+    public Animator ani;
     public bool isAnime = false;
     public GameObject talkDialog;
+    private Rigidbody2D rigid;
 	// Use this for initialization
 	void Start () {
         ray = GameObject.Find("RayCastObject").GetComponent<raykast>();
         ani = gameObject.GetComponent<Animator>();
+        rigid = gameObject.GetComponent<Rigidbody2D>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (isClick) {
+        if (isClick && state.isMove) {
             isClick = false;
             if (!talkDialog.activeSelf) { 
                 tarPos = ray.targetPos;
@@ -81,7 +85,7 @@ public class PlayerMove : MonoBehaviour {
         }
     }
 
-    void aniState(bool lWalk, bool Idle, bool rWalk)
+    public void aniState(bool lWalk, bool Idle, bool rWalk)
     {
         ani.SetBool("LeftWalk", lWalk);
         ani.SetBool("Idle", Idle);

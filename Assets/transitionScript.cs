@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 /*내최선이다 시부랄거 더좋은코드있으면 해주셈*/
 public class transitionScript : MonoBehaviour {
+    public StateManager state;
     public GameObject[] fade;
     private bool isTransition = false;
     private bool isDelay = false;
@@ -47,7 +48,7 @@ public class transitionScript : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            if (talkScript.story1)
+            if (state.nextMap)
             {
                 fade[0].SetActive(true);
                 isDelay = true;

@@ -27,7 +27,7 @@ public class ParabolaController : MonoBehaviour
     internal bool nextParbola = false;
 
     //animation time
-    protected float animationTime = float.MaxValue;
+    public float animationTime = float.MaxValue;
 
     //gizmo
     protected ParabolaFly gizmo;
@@ -55,7 +55,7 @@ public class ParabolaController : MonoBehaviour
             float currTime = c * gizmo.GetDuration() / accur;
             Vector3 currPos = gizmo.GetPositionAtTime(currTime);
             float mag = (currPos - prevPos).magnitude * 2;
-            Gizmos.color = new Color(mag, 0, 0, 1);
+            Gizmos.color = new Color(mag, 1, 0, 1);
             Gizmos.DrawLine(prevPos, currPos);
             Gizmos.DrawSphere(currPos, 0.01f);
             prevPos = currPos;
