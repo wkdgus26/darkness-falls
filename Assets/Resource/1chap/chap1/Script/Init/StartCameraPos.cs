@@ -9,6 +9,7 @@ public class StartCameraPos : MonoBehaviour {
     [SerializeField]
     private GameObject menu;
     public float speed;
+    public float time = 0;
 	// Use this for initialization
 	void Start () {
         StartCoroutine(StartCameraCoroutine());
@@ -16,7 +17,7 @@ public class StartCameraPos : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        time += Time.deltaTime;
 	}
     IEnumerator StartCameraCoroutine()
     {
@@ -24,7 +25,15 @@ public class StartCameraPos : MonoBehaviour {
         {
             while (gameObject.transform.position.y >= -0.5f)
             {
-                speed -= Time.deltaTime * 1.1f;
+                if (time > 6.5f)
+                {
+                    speed -= Time.deltaTime * 1.1f;
+                }
+                else if (time > 2)
+                {
+                    speed += Time.deltaTime * 1.1f;
+                }
+                //speed -= Time.deltaTime * 1.1f;
                 transform.position += Vector3.down * speed * Time.deltaTime;
 
                 yield return null;
