@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 /*내최선이다 시부랄거 더좋은코드있으면 해주셈*/
 public class transitionScript : MonoBehaviour {
+    public GameObject dog;
     public StateManager state;
     public GameObject[] fade;
     private bool isTransition = false;
@@ -32,6 +33,7 @@ public class transitionScript : MonoBehaviour {
             fade[0].SetActive(false);
             fade[1].SetActive(true);
             GameObject.Find("player").transform.GetComponent<SpriteRenderer>().sortingOrder = 4;
+            dog.SetActive(true);
             //StopAllCoroutines();
             //StartCoroutine(fadeTime());
             //fade[1].SetActive(false);
