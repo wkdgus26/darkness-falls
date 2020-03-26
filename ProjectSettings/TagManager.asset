@@ -18,6 +18,7 @@ TagManager:
   - Dialog
   - forward_button
   - backword_button
+  - EventTrig2
   layers:
   - Default
   - TransparentFX

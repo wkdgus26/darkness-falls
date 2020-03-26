@@ -69,7 +69,7 @@ public class ParabolaController : MonoBehaviour
 
         parabolaFly = new ParabolaFly(ParabolaRoot.transform);
         objName = ParabolaRoot.name;
-        Debug.Log(objName);
+        //Debug.Log(objName);
         if (Autostart)
         {
             RefreshTransforms(Speed);
