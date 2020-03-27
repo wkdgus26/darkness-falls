@@ -1222,7 +1222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27d6050843f50f478e31588791bed5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: {fileID: 28361537}
+  state: {fileID: 0}
   isClick: 0
   ray: {fileID: 0}
   ani: {fileID: 0}
@@ -6966,7 +6966,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06208b7b5f31b4f47a45f2dcbb85ef1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dog: {fileID: 1299477719}
   state: {fileID: 28361537}
   fade:
   - {fileID: 1646085602}
