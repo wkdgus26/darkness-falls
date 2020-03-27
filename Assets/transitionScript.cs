@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 /*내최선이다 시부랄거 더좋은코드있으면 해주셈*/
+//이거는 그냥 트렌지션만 해주는 스크립트로 다른 오브젝트 오면안됨 ex) dog
+
 public class transitionScript : MonoBehaviour {
-    public GameObject dog;
     public StateManager state;
     public GameObject[] fade;
+    public Vector3 playerPos, cameraPos;
+
     private bool isTransition = false;
     private bool isDelay = false;
+
     private float delay=0;
 	// Update is called once per frame
 	void Update () {
@@ -28,15 +32,12 @@ public class transitionScript : MonoBehaviour {
             isDelay = false;
             isTransition = false;
             delay = 0;
-            GameObject.Find("player").transform.position = new Vector3(13.69f, -3.26f, 0);
-            Camera.main.transform.position = new Vector3(20.26f, 0, -10f);
+            GameObject.Find("player").transform.position = playerPos;
+            Camera.main.transform.position = cameraPos;
             fade[0].SetActive(false);
             fade[1].SetActive(true);
             GameObject.Find("player").transform.GetComponent<SpriteRenderer>().sortingOrder = 4;
-            dog.SetActive(true);
-            //StopAllCoroutines();
-            //StartCoroutine(fadeTime());
-            //fade[1].SetActive(false);
+            //dog.SetActive(true);
         }
         else if (delay > 3)
         {
@@ -55,15 +56,7 @@ public class transitionScript : MonoBehaviour {
                 fade[0].SetActive(true);
                 isDelay = true;
                 isTransition = true;
-                //StartCoroutine(fadeTime());
             }
         }
-    }
-
-    //IEnumerator fadeTime()
-    //{
-    //    yield return new WaitForSeconds(3f);
-    //    isTransition = true;
-    //}
-    
+    }       
 }

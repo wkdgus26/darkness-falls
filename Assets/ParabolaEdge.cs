@@ -17,13 +17,13 @@ public class ParabolaEdge : MonoBehaviour {
 			paraCon[i].enabled = false;
 			paraCon[i].Animation = true;
 			paraCon[i].Autostart = true;
-			i++;
+			paraCon[i++].animationTime = 0; // 
+
 			if (i == 4)
-			{
 				i = 0;
-			}
-			paraCon[i].animationTime = 0f;
+			
 			paraCon[i].enabled = true;
+
 		}
 	}
 }
