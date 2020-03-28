@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 /*내최선이다 시부랄거 더좋은코드있으면 해주셈*/
 //이거는 그냥 트렌지션만 해주는 스크립트로 다른 오브젝트 오면안됨 ex) dog
-
+//옙
 public class transitionScript : MonoBehaviour {
     public StateManager state;
     public GameObject[] fade;
@@ -13,7 +13,7 @@ public class transitionScript : MonoBehaviour {
     private bool isTransition = false;
     private bool isDelay = false;
 
-    private float delay=0;
+    public float delay=0;
 	// Update is called once per frame
 	void Update () {
         Transition();
@@ -29,7 +29,6 @@ public class transitionScript : MonoBehaviour {
     {
         if (delay > 3 && isTransition)
         {
-            isDelay = false;
             isTransition = false;
             delay = 0;
             GameObject.Find("player").transform.position = playerPos;
@@ -37,10 +36,10 @@ public class transitionScript : MonoBehaviour {
             fade[0].SetActive(false);
             fade[1].SetActive(true);
             GameObject.Find("player").transform.GetComponent<SpriteRenderer>().sortingOrder = 4;
-            //dog.SetActive(true);
         }
         else if (delay > 3)
         {
+            state.isMove = true;
             isDelay = false;
             delay = 0;
             fade[1].SetActive(false);
@@ -53,6 +52,7 @@ public class transitionScript : MonoBehaviour {
         {
             if (state.nextMap)
             {
+                state.isMove = false;
                 fade[0].SetActive(true);
                 isDelay = true;
                 isTransition = true;

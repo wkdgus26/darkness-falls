@@ -7,15 +7,19 @@ public class DogManager : MonoBehaviour {
 	private Animator dAnim; //개새끼 애니메이션
 	private bool isIdel= false;
 	private bool isCo = false;
+	public transitionScript trans;
 	// Use this for initialization
 	void Start () {
 		dAnim = gameObject.GetComponent<Animator>();
-		dAnim.SetBool("isRun", true);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		if (trans.fade[1].activeSelf)
+		{
+			gameObject.GetComponent<BoxCollider2D>().enabled = true;
+		}
 		//Move();
 	}
 
@@ -26,7 +30,7 @@ public class DogManager : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		Debug.Log(col.tag);
+		dAnim.SetBool("isRun", true);
 		if (col.tag == "EventTrig1")
 		{
 			this.transform.rotation = Quaternion.Euler(0,180f,0);

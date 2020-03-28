@@ -54,7 +54,6 @@ public class PlayerMove : MonoBehaviour {
                         {
                             isAnime = true; //애니메 true
                         }
-                    Debug.Log(distance);
                     aniState(false, true, false);
                 }
 
@@ -77,7 +76,6 @@ public class PlayerMove : MonoBehaviour {
                         {
                             isAnime = true; //애니메 true
                         }
-                    Debug.Log(distance);
                     aniState(false, true, false);
                 }
                 yield return null;

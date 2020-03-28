@@ -19,6 +19,7 @@ TagManager:
   - forward_button
   - backword_button
   - EventTrig2
+  - npc
   layers:
   - Default
   - TransparentFX
