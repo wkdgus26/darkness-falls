@@ -27,7 +27,7 @@ public class raykast : MonoBehaviour
             hit = Physics2D.Raycast(ray.origin, ray.direction);
             if(hit)
                 if(hit.collider.tag == "npc")
-                    targetPos = new Vector2(targetPos.x - 1f, targetPos.y);
+                    targetPos = new Vector2(hit.transform.position.x - 1f, hit.transform.position.y);
         }
         /*
          * 

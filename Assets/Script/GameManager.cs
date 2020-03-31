@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour {
                         (ts.storyObj.transform.GetChild(2).GetChild(0).
                                         GetComponent<Text>().text) = talkScript.storyTalk1[talkScript.talkCount++];
                 }
-                else if (ray.hit.collider.tag == "hopae" && talkScript.isStory)
+                if (ray.hit.collider.tag == "hopae" && talkScript.isStory)
                 {
                     state.isMove = false;
                     StartCoroutine(FadewaitTime());
