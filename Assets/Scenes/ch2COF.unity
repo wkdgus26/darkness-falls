@@ -3758,6 +3758,7 @@ GameObject:
   - component: {fileID: 1016935347}
   - component: {fileID: 1016935346}
   - component: {fileID: 1016935349}
+  - component: {fileID: 1016935350}
   m_Layer: 0
   m_Name: npc2
   m_TagString: npc
@@ -3867,6 +3868,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2, y: 5.63}
   m_EdgeRadius: 0
+--- !u!114 &1016935350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1016935345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e809d079a194849b0a09a14af34589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talk:
+    name: "\uC624\uADC0\uC5FC\uC815\uC131"
+    talkList:
+    - "\uBD88\uAC1C\uAC00 \uB0A0\uB6F0\uB294 \uD0D3\uC5D0 \uC544\uBB34 \uAC83\uB3C4
+      \uC9D1\uC911\uD560 \uC218\uAC00 \uC5C6\uC18C. \uC800 \uAC1C\uB9CC \uC870\uC6A9\uD574\uC9C0\uBA74
+      \uC88B\uC744\uD150\uB370!"
 --- !u!1 &1036867935
 GameObject:
   m_ObjectHideFlags: 0
