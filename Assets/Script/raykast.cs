@@ -25,9 +25,10 @@ public class raykast : MonoBehaviour
             targetPos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
             Ray2D ray = new Ray2D(targetPos, Vector2.zero);
             hit = Physics2D.Raycast(ray.origin, ray.direction);
-            if(hit)
-                if(hit.collider.tag == "npc")
+            if (hit) {
+                if (hit.collider.tag == "npc")
                     targetPos = new Vector2(hit.transform.position.x - 1f, hit.transform.position.y);
+            }
         }
         /*
          * 
