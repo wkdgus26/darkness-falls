@@ -10,8 +10,9 @@ public class SpriteFadeIn : MonoBehaviour {
         time = 0;
         GetComponent<SpriteRenderer>().enabled = false;
     }
-    void Update()
+    void FixedUpdate()
     {
+        Debug.Log("123");
         if (time < 3f)
         {
             GetComponent<SpriteRenderer>().enabled = true;
