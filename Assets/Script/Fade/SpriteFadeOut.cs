@@ -7,7 +7,7 @@ public class SpriteFadeOut : MonoBehaviour {
     public float time = 3;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (time > 0f)
         {
