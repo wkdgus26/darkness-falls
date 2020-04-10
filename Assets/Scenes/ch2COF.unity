@@ -1807,6 +1807,7 @@ GameObject:
   - component: {fileID: 470524863}
   - component: {fileID: 470524864}
   - component: {fileID: 470524865}
+  - component: {fileID: 470524866}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -1965,9 +1966,27 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.006965637, y: 0.007992268}
   serializedVersion: 2
-  m_Radius: 0.1433907
+  m_Radius: 0.2668972
+--- !u!95 &470524866
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 470524857}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16fcc6a091c4408449851ea2d42504c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &482468304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2820,6 +2839,7 @@ GameObject:
   - component: {fileID: 792349015}
   - component: {fileID: 792349021}
   - component: {fileID: 792349022}
+  - component: {fileID: 792349023}
   m_Layer: 0
   m_Name: 0
   m_TagString: Untagged
@@ -2978,9 +2998,27 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0072460175, y: 0.007992268}
+  m_Offset: {x: -0.006965637, y: 0.007992268}
   serializedVersion: 2
-  m_Radius: 0.14339066
+  m_Radius: 0.2668972
+--- !u!95 &792349023
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 792349014}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16fcc6a091c4408449851ea2d42504c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &825763632
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,6 +3158,7 @@ GameObject:
   - component: {fileID: 900910783}
   - component: {fileID: 900910782}
   - component: {fileID: 900910789}
+  - component: {fileID: 900910790}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -3278,9 +3317,27 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.006965637, y: 0.007992268}
   serializedVersion: 2
-  m_Radius: 0.1433907
+  m_Radius: 0.2668972
+--- !u!95 &900910790
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 900910781}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16fcc6a091c4408449851ea2d42504c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &916782900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3483,6 +3540,7 @@ GameObject:
   - component: {fileID: 988228745}
   - component: {fileID: 988228744}
   - component: {fileID: 988228751}
+  - component: {fileID: 988228752}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -3641,9 +3699,27 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.006965637, y: 0.007992268}
   serializedVersion: 2
-  m_Radius: 0.1433907
+  m_Radius: 0.2668972
+--- !u!95 &988228752
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 988228743}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16fcc6a091c4408449851ea2d42504c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1003621301
 GameObject:
   m_ObjectHideFlags: 0
@@ -5052,6 +5128,7 @@ GameObject:
   - component: {fileID: 1364618533}
   - component: {fileID: 1364618532}
   - component: {fileID: 1364618539}
+  - component: {fileID: 1364618540}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -5210,9 +5287,27 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.006965637, y: 0.007992268}
   serializedVersion: 2
-  m_Radius: 0.1433907
+  m_Radius: 0.2668972
+--- !u!95 &1364618540
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1364618531}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16fcc6a091c4408449851ea2d42504c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1385320706
 GameObject:
   m_ObjectHideFlags: 0
