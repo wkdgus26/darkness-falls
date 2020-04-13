@@ -10,7 +10,7 @@ public class transitionScript : MonoBehaviour {
     public GameObject[] fade;
     public Vector3 playerPos, cameraPos;
 
-    private bool isTransition = false;
+    public bool isTransition = false;
     private bool isDelay = false;
 
     public float delay=0;

@@ -73,9 +73,7 @@ public class DogManager : MonoBehaviour {
 	IEnumerator IdelCoroutine()
 	{
 		isCo = true;
-		Debug.Log("co");
 		yield return new WaitForSecondsRealtime(5f);
-		Debug.Log("5second");
 		dAnim.SetBool("isRun", false);
 		isIdel = true;
 		yield return new WaitForSeconds(3f);
