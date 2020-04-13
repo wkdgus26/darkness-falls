@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+ * 소스코드 조금 간소화할 필요있음.
+ * 그리고 호패나 대화중 땅에 레이캐스트찍으면 호패사라지거나, 
+ * 대화끝난후 그쪽으로 이동하는 버그 있어서 수정해야함
+ * bool 형은 Statemanager에 다 모아두고 있음
+ */
 public class GameManager : MonoBehaviour {
     [SerializeField]
     private StateManager state;
@@ -12,6 +17,8 @@ public class GameManager : MonoBehaviour {
     public PlayerMove playerScript;
     public GameObject hopae;
     public GameObject npc;
+    public transitionScript trans;
+    public GameObject mGame2;
     // Use this for initialization
     void Start () {
         //ts = GameObject.Find("ScriptManager").GetComponent<talkScript>();
@@ -22,53 +29,80 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        scriptControl(); // 스크립트 건드는곳
+        storyTransition();
+        mGameStart(); //미니게임시작
 
+    }
+    void storyTransition() // 트랜지션될때 story2 on -> story1 이랑 충돌되는 버그있어서 만듬
+    {
+        if (trans.isTransition)
+        {
+            StateManager.isStory = false;
+            state.story2 = true;
+            talkScript.talkCount = 0;
+        }
+    }
+    void mGameStart()
+    {
         if (ray.hit == true)
         {
-            if (ts.story1) // 첫번째 스토리
+            if (ray.hit.collider.tag == "mGamePop" && StateManager.isStory)
             {
-                Debug.Log(ray.targetPos);
-                if (ray.hit.collider.tag == "npc" && !talkScript.isStory)
+                state.isHit = true;
+                mGame2.SetActive(true);
+            }
+        }
+    }
+
+    void scriptControl()
+    {
+        if (ray.hit == true)
+        {
+            if (state.story1) // 첫번째 스토리
+            {
+                if (ray.hit.collider.tag == "npc" && !StateManager.isStory)
                 {
                     if (playerObject.transform.position.x <= ray.hit.transform.position.x - 1.2f &&
-                        playerObject.transform.position.x >= ray.hit.transform.position.x + 1.2f)
-                        ts.storyObj.SetActive(true);
+                        playerObject.transform.position.x >= ray.hit.transform.position.x + 1.2f) { }
+                    //ts.storyObj.SetActive(true);
                     else
                     {
                         playerScript.isClick = true;
                     }
                 }
-                else if (ray.hit.collider.name == "Next_Button" && !talkScript.isStory)   //나중에 미션2를 위해 수정해야 할듯
+                else if (ray.hit.collider.tag == "next_button" && !StateManager.isStory)   //나중에 미션2를 위해 수정해야 할듯
                 {
+                    state.isHit = true;
                     ts.storyObj.SetActive(false);
-                    talkScript.isStory = true;
+                    StateManager.isStory = true;
 
-                    if (talkScript.talkCount > 1)
-                    {
-                        npc.GetComponent<BoxCollider2D>().enabled = false;
-                        talkScript.isStory = false;
-                        state.nextMap = true;
-                        ts.story1 = false;
-                        talkScript.talkCount = 0;
-                        StartCoroutine(MoveNpc());
-                    } 
-                    else if (talkScript.talkCount < talkScript.storyTalk1.Length)
+                    if (talkScript.talkCount < talkScript.storyTalk1.Length)
                         (ts.storyObj.transform.GetChild(2).GetChild(0).
                                         GetComponent<Text>().text) = talkScript.storyTalk1[talkScript.talkCount++];
+                    else
+                    {
+                        npc.GetComponent<BoxCollider2D>().enabled = false;
+                        state.nextMap = true;
+                        state.story1 = false;
+                        npc.tag = "Untagged";
+                        StartCoroutine(MoveNpc());
+                    }
                 }
-                if (ray.hit.collider.tag == "hopae" && talkScript.isStory)
+                if (ray.hit.collider.tag == "hopae" && StateManager.isStory)
                 {
+                    //ray.targetPos = new Vector2(0, 0);
+                    state.isHit = true;
                     state.isMove = false;
                     StartCoroutine(FadewaitTime());
                 }
             }
 
-            else if (!ts.story1) // 두번째 스토리
+            else if (state.story2) // 두번째 스토리
             {
-                Debug.Log(talkScript.talkCount);
-                if (ray.hit.collider.tag == "npc" && !talkScript.isStory)
+                if (ray.hit.collider.tag == "npc" && !StateManager.isStory)
                 {
-                    ts.storyObj.SetActive(true);
+                    //ts.storyObj.SetActive(true);
                     if (playerObject.transform.position.x <= ray.hit.transform.position.x - 2f &&
                         playerObject.transform.position.x >= ray.hit.transform.position.x + 2f)
                     {
@@ -84,25 +118,36 @@ public class GameManager : MonoBehaviour {
                                     GetComponent<Text>().text) = talkScript.storyTalk2[talkScript.talkCount];
                 }
 
-                else if (ray.hit.collider.name == "Next_Button" && !talkScript.isStory)   //나중에 미션2를 위해 수정해야 할듯
+                else if (ray.hit.collider.tag == "next_button" && !StateManager.isStory)   //나중에 미션2를 위해 수정해야 할듯
                 {
-                    //ts.storyObj.SetActive(false);
                     //talkScript.isStory = true;
-                    if (talkScript.talkCount > 3)
+                    //ray.targetPos = new Vector2(0, 0);
+                    state.isHit = true;
+                    StateManager.isStory = true;
+
+                    if (talkScript.talkCount == 0) 
+                    {
+                        (ts.storyObj.transform.GetChild(2).GetChild(0).
+                                        GetComponent<Text>().text) = talkScript.storyTalk2[talkScript.talkCount++];
+                        ts.storyObj.SetActive(false);
+                    }
+                    else if (talkScript.talkCount < talkScript.storyTalk2.Length)
+                        (ts.storyObj.transform.GetChild(2).GetChild(0).
+                                        GetComponent<Text>().text) = talkScript.storyTalk2[talkScript.talkCount++];
+                    else// if (talkScript.talkCount > 3)
                     {
                         npc.GetComponent<BoxCollider2D>().enabled = false;
                         state.nextMap = true;
-                        ts.story1 = false;
+                        state.story2 = false;
+                        ts.storyObj.SetActive(false);
                     }
-                    if (talkScript.talkCount < talkScript.storyTalk2.Length)
-                        (ts.storyObj.transform.GetChild(2).GetChild(0).
-                                        GetComponent<Text>().text) = talkScript.storyTalk2[talkScript.talkCount++];
                 }
             }
         }
-        if (playerScript.isAnime && !talkScript.isStory)
+        if (playerScript.isAnime && !StateManager.isStory)
         {
-
+            Debug.Log("2" + StateManager.isStory);
+            npc.GetComponent<BoxCollider2D>().enabled = false;
             ts.storyObj.SetActive(true);
             playerScript.isAnime = false;
         }
@@ -125,9 +170,12 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(1f);
         hopae.GetComponent<SpriteFadeOut>().enabled = true;
         yield return new WaitForSeconds(3f);
-        talkScript.isStory = false;
-        Destroy(hopae);
+        StateManager.isStory = false;
+        Debug.Log("2" + StateManager.isStory);
+        //Destroy(hopae);
+        hopae.SetActive(false);
         state.isMove = true;
+        npc.GetComponent<BoxCollider2D>().enabled = true;
     }
     //npc 움직이는거
     IEnumerator MoveNpc()

@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class talkScript : MonoBehaviour { 
-    public static bool isStory = false;
-    public bool story1 = true;
-
     public static int talkNum = 1;
     public static string[] storyTalk1;
     public static string[] storyTalk2;

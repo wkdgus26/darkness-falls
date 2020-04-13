@@ -50,7 +50,7 @@ public class PlayerMove : MonoBehaviour {
                 if (gameObject.transform.position.x >= tarPos.x)
                 {
                     if (ray.hit)    // hit Null Object 가 아니면
-                        if (ray.hit.collider.name == "npc" && distance <= 1.2f)   //hit한 오브젝트의 이름이 npc이고 둘의 거리가 1 이하이면
+                        if (ray.hit.collider.tag == "npc" && distance <= 1.2f)   //hit한 오브젝트의 이름이 npc이고 둘의 거리가 1 이하이면
                         {
                             isAnime = true; //애니메 true
                         }
@@ -67,7 +67,7 @@ public class PlayerMove : MonoBehaviour {
             {
 
                 transform.position += Vector3.left * 2f * Time.deltaTime;
-                if (ray.hit == true && ray.hit.transform.name == "npc")
+                if (ray.hit == true && ray.hit.transform.tag == "npc")
                     distance = Vector3.Distance(transform.position, ray.hit.transform.position);
                 if (gameObject.transform.position.x <= tarPos.x)
                 {
