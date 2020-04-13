@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour {
         scriptControl(); // 스크립트 건드는곳
         storyTransition();
         mGameStart(); //미니게임시작
-
     }
     void storyTransition() // 트랜지션될때 story2 on -> story1 이랑 충돌되는 버그있어서 만듬
     {
@@ -92,7 +91,7 @@ public class GameManager : MonoBehaviour {
                 if (ray.hit.collider.tag == "hopae" && StateManager.isStory)
                 {
                     //ray.targetPos = new Vector2(0, 0);
-                    state.isHit = true;
+                    state.isHit = false;
                     state.isMove = false;
                     StartCoroutine(FadewaitTime());
                 }
@@ -154,6 +153,7 @@ public class GameManager : MonoBehaviour {
     }
     IEnumerator FadewaitTime()
     {
+        state.fadeInOut = true;
         //호패를 부모에게서 떼어냄
         hopae.transform.parent = null;
         // 플레이어가 호패클릭했을때 멈추고 정면보기
@@ -176,6 +176,7 @@ public class GameManager : MonoBehaviour {
         hopae.SetActive(false);
         state.isMove = true;
         npc.GetComponent<BoxCollider2D>().enabled = true;
+        state.fadeInOut = false;
     }
     //npc 움직이는거
     IEnumerator MoveNpc()

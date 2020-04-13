@@ -398,6 +398,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 212613110708302550, guid: 96a6abb564427324a9e107e4c6e5a282,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: af9ecfd818fec5144a63b40e388adf83,
+        type: 3}
+    - target: {fileID: 1555899976923310, guid: 96a6abb564427324a9e107e4c6e5a282, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96a6abb564427324a9e107e4c6e5a282, type: 2}
   m_IsPrefabAsset: 0
@@ -1251,6 +1261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: {fileID: 0}
   isClick: 0
+  playPos: {x: 0, y: 0}
   ray: {fileID: 0}
   ani: {fileID: 0}
   isAnime: 0
@@ -1551,9 +1562,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000015258789, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 7
 --- !u!114 &346404969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2738,6 +2749,11 @@ Transform:
   m_Father: {fileID: 1254698296}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &706828362 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212613110708302550, guid: 96a6abb564427324a9e107e4c6e5a282,
+    type: 2}
+  m_PrefabInternal: {fileID: 50449236}
 --- !u!1 &741962744
 GameObject:
   m_ObjectHideFlags: 0
@@ -7037,6 +7053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: {fileID: 28361537}
   isClick: 0
+  playPos: {x: 0, y: 0}
   ray: {fileID: 0}
   ani: {fileID: 0}
   isAnime: 0
@@ -7437,6 +7454,17 @@ MonoBehaviour:
   - {fileID: 482468304}
   playerPos: {x: 13.69, y: -3.26, z: 0}
   cameraPos: {x: 20.26, y: 0, z: -10}
+  rendTitles: {fileID: 706828362}
+  spriteTitleImages:
+  - {fileID: 21300000, guid: 0c0f592aa9ebafd4f9b809fe16777ace, type: 3}
+  - {fileID: 21300000, guid: af9ecfd818fec5144a63b40e388adf83, type: 3}
+  - {fileID: 21300000, guid: f78a3d0474c57d94ab710857579a9500, type: 3}
+  - {fileID: 21300000, guid: ce8186106ea8a894399bb59675b6b155, type: 3}
+  - {fileID: 21300000, guid: ff614050733144d4096816e9882107df, type: 3}
+  - {fileID: 21300000, guid: e54c6ae887fc30944aeea73efc5f4d57, type: 3}
+  - {fileID: 21300000, guid: 0b00e366fe1f54c48a265a284571f700, type: 3}
+  - {fileID: 21300000, guid: 01ec22471750dec48a3ddcbd2e75d3c5, type: 3}
+  - {fileID: 21300000, guid: 4a6fdb404cf7d38419db4a59cae8a472, type: 3}
   isTransition: 0
   delay: 0
 --- !u!61 &1980351764

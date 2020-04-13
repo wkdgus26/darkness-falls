@@ -9,9 +9,11 @@ public class transitionScript : MonoBehaviour {
     public StateManager state;
     public GameObject[] fade;
     public Vector3 playerPos, cameraPos;
-
+    public SpriteRenderer rendTitles;   //Object Renderer => Map changes
+    public Sprite[] spriteTitleImages;    //sprite Image
+    static private int spriteCounter = 2;
     public bool isTransition = false;
-    private bool isDelay = false;
+    private bool isDelay = false; 
 
     public float delay=0;
 	// Update is called once per frame
@@ -56,7 +58,14 @@ public class transitionScript : MonoBehaviour {
                 fade[0].SetActive(true);
                 isDelay = true;
                 isTransition = true;
+                StartCoroutine(nChangeTitleImages());
             }
         }
-    }       
+    }
+
+    IEnumerator nChangeTitleImages()
+    {
+        yield return new WaitForSeconds(2.9f);
+        rendTitles.sprite = spriteTitleImages[spriteCounter++];
+    }
 }

@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour {
     [SerializeField]
     private StateManager state;
     public bool isClick = false;
-    private Vector2 playPos;
+    public Vector2 playPos;
     private Vector2 tarPos;
     public raykast ray;
     public Animator ani;
@@ -65,7 +65,6 @@ public class PlayerMove : MonoBehaviour {
             aniState(true, false, false);
             while (gameObject.transform.position.x >= tarPos.x)
             {
-
                 transform.position += Vector3.left * 2f * Time.deltaTime;
                 if (ray.hit == true && ray.hit.transform.tag == "npc")
                     distance = Vector3.Distance(transform.position, ray.hit.transform.position);
@@ -82,7 +81,6 @@ public class PlayerMove : MonoBehaviour {
             }
         }
     }
-
     public void aniState(bool lWalk, bool Idle, bool rWalk)
     {
         ani.SetBool("LeftWalk", lWalk);

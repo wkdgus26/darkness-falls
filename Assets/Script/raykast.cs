@@ -20,7 +20,7 @@ public class raykast : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !state.fadeInOut)
         {
             if(!ts.storyObj.activeSelf)
                 playerScript.isClick = true;
@@ -28,11 +28,15 @@ public class raykast : MonoBehaviour
             targetPos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
             Ray2D ray = new Ray2D(targetPos, Vector2.zero);
             hit = Physics2D.Raycast(ray.origin, ray.direction);
-
             if (hit)
             {
                 if (hit.collider.tag == "npc")
                     targetPos = new Vector2(hit.transform.position.x - 1f, hit.transform.position.y);
+                else if (hit.collider.tag == "hopae")
+                {
+                    Transform pTs = GameObject.Find("player").GetComponent<Transform>();
+                    targetPos = new Vector2(pTs.transform.position.x, pTs.transform.position.y);
+                }
             }
         }
         if (state.isHit == true) // 레이캐스트 초기화

@@ -40,5 +40,6 @@ public class SceneController : MonoBehaviour {
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(list[posScene].ToString());
         posScene++;
+        
     }
 }
