@@ -17,10 +17,7 @@ public class DogManager : MonoBehaviour {
 	void Update ()
 	{
 		if (trans.fade[1].activeSelf)
-		{
 			gameObject.GetComponent<BoxCollider2D>().enabled = true;
-		}
-		//Move();
 	}
 
 	void Move() {

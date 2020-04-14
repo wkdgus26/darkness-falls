@@ -37,7 +37,7 @@ public class PlayerMove : MonoBehaviour {
     IEnumerator Movement()
     {
         float distance = 0f;
-        
+
         playPos = transform.position;
         if (gameObject.transform.position.x < tarPos.x)
         {

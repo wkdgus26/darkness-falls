@@ -12,9 +12,10 @@ public class raykast : MonoBehaviour
     public talkScript ts;
     [SerializeField]
     private StateManager state;
+    //int layerMask = 1 << LayerMask.NameToLayer("npc");
     void Start()
     {
-        playerScript = GameObject.Find("player").GetComponent<PlayerMove>();
+       // playerScript = GameObject.Find("player").GetComponent<PlayerMove>();
         ts = GameObject.Find("ScriptManager").GetComponent<talkScript>();
     }
 	// Update is called once per frame
@@ -27,7 +28,6 @@ public class raykast : MonoBehaviour
             targetPos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
             Ray2D ray = new Ray2D(targetPos, Vector2.zero);
             hit = Physics2D.Raycast(ray.origin, ray.direction);
-
             if (!ts.storyObj.activeSelf)
                 playerScript.isClick = true;
 
