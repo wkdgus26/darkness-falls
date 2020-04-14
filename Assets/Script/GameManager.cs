@@ -11,19 +11,21 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
     [SerializeField]
     private StateManager state;
-    public talkScript ts;
-    private GameObject playerObject;
+    public transitionScript trans;
     public raykast ray;
+    public talkScript ts;
+    public GameObject playerObject;
     public PlayerMove playerScript;
     public GameObject hopae;
     public GameObject npc;
-    public transitionScript trans;
     public GameObject mGame2;
+    public GameObject missionText;
+    public GameObject myosa;
     // Use this for initialization
     void Start () {
         //ts = GameObject.Find("ScriptManager").GetComponent<talkScript>();
         //state = GameObject.Find("StateManager").GetComponent<StateManager>();
-        playerObject = GameObject.Find("player");
+       // playerObject = GameObject.Find("player");
         //playerScript = GameObject.Find("player").GetComponent<PlayerMove>();
     }
 	
@@ -31,7 +33,6 @@ public class GameManager : MonoBehaviour {
 	void Update () {
         scriptControl(); // 스크립트 건드는곳
         storyTransition();
-        mGameStart(); //미니게임시작
     }
     void storyTransition() // 트랜지션될때 story2 on -> story1 이랑 충돌되는 버그있어서 만듬
     {
@@ -40,17 +41,6 @@ public class GameManager : MonoBehaviour {
             StateManager.isStory = false;
             state.story2 = true;
             talkScript.talkCount = 0;
-        }
-    }
-    void mGameStart()
-    {
-        if (ray.hit == true)
-        {
-            if (ray.hit.collider.tag == "mGamePop" && StateManager.isStory)
-            {
-                state.isHit = true;
-                mGame2.SetActive(true);
-            }
         }
     }
 
@@ -117,7 +107,7 @@ public class GameManager : MonoBehaviour {
                                     GetComponent<Text>().text) = talkScript.storyTalk2[talkScript.talkCount];
                 }
 
-                else if (ray.hit.collider.tag == "next_button" && !StateManager.isStory)   //나중에 미션2를 위해 수정해야 할듯
+                else if (ray.hit.collider.tag == "next_button")   //나중에 미션2를 위해 수정해야 할듯
                 {
                     //talkScript.isStory = true;
                     //ray.targetPos = new Vector2(0, 0);
@@ -129,6 +119,7 @@ public class GameManager : MonoBehaviour {
                         (ts.storyObj.transform.GetChild(2).GetChild(0).
                                         GetComponent<Text>().text) = talkScript.storyTalk2[talkScript.talkCount++];
                         ts.storyObj.SetActive(false);
+                        StartCoroutine(MissionCoroutine());
                     }
                     else if (talkScript.talkCount < talkScript.storyTalk2.Length)
                         (ts.storyObj.transform.GetChild(2).GetChild(0).
@@ -139,6 +130,7 @@ public class GameManager : MonoBehaviour {
                         state.nextMap = true;
                         state.story2 = false;
                         ts.storyObj.SetActive(false);
+                        myosa.SetActive(true);
                     }
                 }
             }
@@ -186,5 +178,18 @@ public class GameManager : MonoBehaviour {
             npc.transform.position += Vector3.right * 1f * Time.deltaTime;
             yield return null;
         }
+    }
+
+    IEnumerator MissionCoroutine() // 미니게임 실행순서
+    {
+        state.isMove = false;
+        missionText.SetActive(true);
+        yield return new WaitForSeconds(3.2f);
+        missionText.GetComponent<SpriteFadeIn>().enabled = false;
+        missionText.GetComponent<SpriteFadeOut>().enabled = true;
+        yield return new WaitForSeconds(3.2f);
+        missionText.SetActive(false);
+        //state.isHit = true;
+        mGame2.SetActive(true);
     }
 }

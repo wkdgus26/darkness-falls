@@ -21,6 +21,8 @@ TagManager:
   - EventTrig2
   - npc
   - mGamePop
+  - key
+  - cat
   layers:
   - Default
   - TransparentFX
@@ -34,7 +36,7 @@ TagManager:
   - rock
   - water
   - m
-  - 
+  - npc
   - 
   - 
   - 
