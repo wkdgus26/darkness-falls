@@ -14,6 +14,7 @@ public class myosaController : MonoBehaviour {
 	private Animator catAnim;
 	public raykast ray;
 	private float time = 0;
+	float dis = 0;
 	// Use this for initialization
 	void Start () {
 		catAnim = GetComponent<Animator>();
@@ -32,51 +33,40 @@ public class myosaController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (isFollow)
-			catMove();
-
-		if (Input.GetMouseButtonDown(0))
+		dis = Vector3.Distance(player.transform.position, this.transform.position);
+		Debug.Log(dis);
+		if(dis < 1f)
 		{
-			isFollow = true;
+			Debug.Log("STOP");
+			catState(true, false, false);
+			Debug.Log(player.transform.position.x + " " + this.transform.position.x);
+		}
+		else if(player.transform.position.x > this.transform.position.x)
+		{
+			Debug.Log("CAT LEFT");
+			catState(false, false, true);
+		}
+		else if(player.transform.position.x < this.transform.position.x)
+		{
+			Debug.Log("CAT RIGHT");
+			catState(false, true, false);
 		}
 	}
-
+	void FixedUpdate()
+	{
+		catMove();
+	}
 	void catMove()
 	{
-		if (player.transform.position.x > gameObject.transform.position.x + 1.2f)
+		if (catAnim.GetBool("isLwalk"))
 		{
-			gameObject.transform.position =
-				new Vector2(player.transform.position.x - 1.2f, gameObject.transform.position.y);
-			catState(false, false, true);
-			if (ray.hit.point.x < gameObject.transform.position.x + 1.17f)
-			{
-				isFollow = false;
-				catState(true, false, false);
-			}
+			transform.position += Vector3.left * Time.deltaTime;
 		}
-		else if (player.transform.position.x < gameObject.transform.position.x - 1.2f)
+		else if (catAnim.GetBool("isRwalk"))
 		{
-			gameObject.transform.position =
-				new Vector2(player.transform.position.x + 1.2f, gameObject.transform.position.y);
-			catState(false, true, false);
-			if (ray.hit.point.x > gameObject.transform.position.x - 1.17f)
-			{
-				isFollow = false;
-				catState(true, false, false);
-			}
+			transform.position += Vector3.right * Time.deltaTime;
 		}
-	
-
 	}
-
-	//void catChangeMove()
-	//{
-	//	if (ray.hit.point.x < gameObject.transform.position.x && ray.hit.point.x > gameObject.transform.position.x)
-	//	{
-	//		catState(true, false, false);
-	//		isFollow = false;
-	//	}
-	//}
 
 
 	void catState(bool Idle,bool Lwalk, bool Rwalk)
@@ -101,7 +91,6 @@ public class myosaController : MonoBehaviour {
 		{
 			gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
 			gameObject.GetComponent<Rigidbody2D>().gravityScale = 1f;
-			isFollow = true;
 		}
 	}
 }
