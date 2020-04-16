@@ -274,8 +274,10 @@ MonoBehaviour:
   isMove: 1
   nextMap: 0
   isHit: 0
+  isAnime: 0
   story1: 0
   story2: 1
+  isCatFallow: 0
   fadeInOut: 0
 --- !u!4 &28361538
 Transform:
@@ -582,6 +584,26 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 70.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 61791199085628386, guid: 59c2ea4f27649d24797b38cfae97e701,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 61791199085628386, guid: 59c2ea4f27649d24797b38cfae97e701,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 61791199085628386, guid: 59c2ea4f27649d24797b38cfae97e701,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61791199085628386, guid: 59c2ea4f27649d24797b38cfae97e701,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c2ea4f27649d24797b38cfae97e701, type: 2}
@@ -3382,7 +3404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &741356158
 Transform:
   m_ObjectHideFlags: 0
@@ -5970,7 +5992,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1299477719}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.542, y: -4.429, z: -3.7423205}
+  m_LocalPosition: {x: 10.8, y: -4.44, z: -3.7423205}
   m_LocalScale: {x: 0.27, y: 0.27, z: 1}
   m_Children: []
   m_Father: {fileID: 597019965}
@@ -7436,6 +7458,8 @@ MonoBehaviour:
   mGame2: {fileID: 609521099}
   missionText: {fileID: 775033263}
   myosa: {fileID: 1708754309}
+  bigDipper: {fileID: 741356157}
+  npc2Anime: {fileID: 1016935346}
 --- !u!4 &1700077532
 Transform:
   m_ObjectHideFlags: 0
@@ -7469,7 +7493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1708754310
 Animator:
   serializedVersion: 3
@@ -7541,7 +7565,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1708754309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.73, y: -4.22, z: 0}
+  m_LocalPosition: {x: 25.699, y: -3.733, z: 0}
   m_LocalScale: {x: 0.32, y: 0.32, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7559,8 +7583,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 281449393}
+  npc2: {fileID: 1016935345}
   isFollow: 0
   ray: {fileID: 1414016214}
+  state: {fileID: 28361537}
 --- !u!50 &1708754314
 Rigidbody2D:
   serializedVersion: 4

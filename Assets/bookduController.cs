@@ -38,7 +38,7 @@ public class bookduController : MonoBehaviour {
 	IEnumerator fadeOutCoroutine()
 	{
 		isFade = true;
-		float atime = 0.2f;
+		float atime = 0.4f;
 		int a = index;
 
 		while (atime > 0)

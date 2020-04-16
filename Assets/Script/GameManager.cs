@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
     public GameObject mGame2;
     public GameObject missionText;
     public GameObject myosa;
+    public GameObject bigDipper;
+    public Animator npc2Anime;
     // Use this for initialization
     void Start () {
         //ts = GameObject.Find("ScriptManager").GetComponent<talkScript>();
@@ -33,6 +35,7 @@ public class GameManager : MonoBehaviour {
 	void Update () {
         scriptControl(); // 스크립트 건드는곳
         storyTransition();
+
     }
     void storyTransition() // 트랜지션될때 story2 on -> story1 이랑 충돌되는 버그있어서 만듬
     {
@@ -48,6 +51,7 @@ public class GameManager : MonoBehaviour {
     {
         if (ray.hit == true)
         {
+            
             if (state.story1) // 첫번째 스토리
             {
                 if (ray.hit.collider.tag == "npc" && !StateManager.isStory)
@@ -89,6 +93,8 @@ public class GameManager : MonoBehaviour {
 
             else if (state.story2) // 두번째 스토리
             {
+
+
                 if (ray.hit.collider.tag == "npc" && !StateManager.isStory)
                 {
                     //ts.storyObj.SetActive(true);
@@ -108,9 +114,7 @@ public class GameManager : MonoBehaviour {
                 }
 
                 else if (ray.hit.collider.tag == "next_button")   //나중에 미션2를 위해 수정해야 할듯
-                {
-                    //talkScript.isStory = true;
-                    //ray.targetPos = new Vector2(0, 0);
+                { 
                     state.isHit = true;
                     StateManager.isStory = true;
 
@@ -121,9 +125,11 @@ public class GameManager : MonoBehaviour {
                         ts.storyObj.SetActive(false);
                         StartCoroutine(MissionCoroutine());
                     }
-                    else if (talkScript.talkCount < talkScript.storyTalk2.Length)
+                    else if (talkScript.talkCount < talkScript.storyTalk2.Length) {
                         (ts.storyObj.transform.GetChild(2).GetChild(0).
                                         GetComponent<Text>().text) = talkScript.storyTalk2[talkScript.talkCount++];
+                        
+                    }
                     else// if (talkScript.talkCount > 3)
                     {
                         npc.GetComponent<BoxCollider2D>().enabled = false;
@@ -134,6 +140,24 @@ public class GameManager : MonoBehaviour {
                     }
                 }
             }
+        }
+        if (state.story2 && talkScript.talkCount == 2)
+        {
+            if (bigDipper != null)
+            {
+                bigDipper.SetActive(true);
+                StartCoroutine(bigDipperWaitTime());
+            }
+        }
+        else if (state.story2 && talkScript.talkCount == 3 && !(state.isAnime))
+        {
+            state.isAnime = true;
+            StartCoroutine(bookscrap());
+        }else if(state.story2 && talkScript.talkCount == 4)
+        {
+            myosa.SetActive(true);
+            StartCoroutine(MoveCat());
+            state.story2 = false;
         }
         if (playerScript.isAnime && !StateManager.isStory)
         {
@@ -179,7 +203,10 @@ public class GameManager : MonoBehaviour {
             yield return null;
         }
     }
-
+    IEnumerator MoveCat()
+    {
+        yield return new WaitForSeconds(3f);
+    }
     IEnumerator MissionCoroutine() // 미니게임 실행순서
     {
         state.isMove = false;
@@ -191,5 +218,23 @@ public class GameManager : MonoBehaviour {
         missionText.SetActive(false);
         //state.isHit = true;
         mGame2.SetActive(true);
+    }
+
+    IEnumerator bigDipperWaitTime()
+    {
+        state.story2 = false;
+        yield return new WaitForSeconds(3f);
+        Destroy(bigDipper);
+        state.story2 = true;
+    }
+
+    IEnumerator bookscrap()
+    {
+        state.story2 = false;
+        npc2Anime.SetBool("isBookScrap", true);
+        yield return new WaitForSeconds(3f);
+        state.story2 = true;
+        npc2Anime.SetBool("isBookScrap", false);
+        
     }
 }
