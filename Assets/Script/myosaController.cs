@@ -34,7 +34,7 @@ public class myosaController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		dis = Vector3.Distance(player.transform.position, this.transform.position);
-		Debug.Log(dis);
+		//Debug.Log(dis);
 		if(dis < 1f)
 		{
 			Debug.Log("STOP");
