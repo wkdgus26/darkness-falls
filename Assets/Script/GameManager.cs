@@ -18,11 +18,13 @@ public class GameManager : MonoBehaviour {
     public PlayerMove playerScript;
     public GameObject hopae;
     public GameObject npc;
+    public GameObject npc2;
     public GameObject mGame2;
     public GameObject missionText;
     public GameObject myosa;
     public GameObject bigDipper;
     public Animator npc2Anime;
+    public Text nameText;
     // Use this for initialization
     void Start () {
         //ts = GameObject.Find("ScriptManager").GetComponent<talkScript>();
@@ -51,9 +53,10 @@ public class GameManager : MonoBehaviour {
     {
         if (ray.hit == true)
         {
-            
+
             if (state.story1) // 첫번째 스토리
             {
+                nameText.text = "연년무곡성";
                 if (ray.hit.collider.tag == "npc" && !StateManager.isStory)
                 {
                     if (playerObject.transform.position.x <= ray.hit.transform.position.x - 1.2f &&
@@ -93,8 +96,7 @@ public class GameManager : MonoBehaviour {
 
             else if (state.story2) // 두번째 스토리
             {
-
-
+                nameText.text = "오귀염정성";
                 if (ray.hit.collider.tag == "npc" && !StateManager.isStory)
                 {
                     //ts.storyObj.SetActive(true);
@@ -114,29 +116,75 @@ public class GameManager : MonoBehaviour {
                 }
 
                 else if (ray.hit.collider.tag == "next_button")   //나중에 미션2를 위해 수정해야 할듯
-                { 
+                {
+                    Debug.Log(talkScript.talkCount);
                     state.isHit = true;
                     StateManager.isStory = true;
 
-                    if (talkScript.talkCount == 0) 
+                    if (talkScript.talkCount == 0)
                     {
                         (ts.storyObj.transform.GetChild(2).GetChild(0).
                                         GetComponent<Text>().text) = talkScript.storyTalk2[talkScript.talkCount++];
                         ts.storyObj.SetActive(false);
                         StartCoroutine(MissionCoroutine());
                     }
-                    else if (talkScript.talkCount < talkScript.storyTalk2.Length) {
-                        (ts.storyObj.transform.GetChild(2).GetChild(0).
+                    else if (talkScript.talkCount < talkScript.storyTalk2.Length)
+                    {
+                        //talkScript.talkCount++;
+                           (ts.storyObj.transform.GetChild(2).GetChild(0).
                                         GetComponent<Text>().text) = talkScript.storyTalk2[talkScript.talkCount++];
-                        
+
                     }
                     else// if (talkScript.talkCount > 3)
                     {
-                        npc.GetComponent<BoxCollider2D>().enabled = false;
-                        state.nextMap = true;
+                        npc2.GetComponent<BoxCollider2D>().enabled = false;
+                        npc2.tag = "Untagged";
+                        //state.nextMap = true;
+                        StateManager.isStory = false;
                         state.story2 = false;
                         ts.storyObj.SetActive(false);
                         myosa.SetActive(true);
+                        state.isCat = true;
+                        talkScript.talkCount = 0;
+                    }
+                }
+            }
+            else if (state.isCat)
+            {
+                nameText.text = "묘사";
+                Debug.Log("isanim : "+playerScript.isAnime);
+                Debug.Log("isstory:" + StateManager.isStory);
+                if (ray.hit.collider.tag == "cat" && !StateManager.isStory)
+                {
+                    //ts.storyObj.SetActive(true);
+                    if (playerObject.transform.position.x <= ray.hit.transform.position.x - 2f &&
+                        playerObject.transform.position.x >= ray.hit.transform.position.x + 2f)
+                    {
+                        Debug.Log("2");
+                        //ts.storyObj.SetActive(true);
+                    }
+                    else
+                    {
+                        playerScript.isClick = true;
+                    }
+
+                    (ts.storyObj.transform.GetChild(2).GetChild(0).
+                                    GetComponent<Text>().text) = talkScript.story2CatTalk[talkScript.talkCount];
+                }
+
+                else if (ray.hit.collider.tag == "next_button")   //나중에 미션2를 위해 수정해야 할듯
+                {
+                    Debug.Log(talkScript.talkCount);
+                    state.isHit = true;
+                    StateManager.isStory = true;
+
+                    if (talkScript.talkCount == 0)
+                    {
+                        state.nextMap = true;
+                        state.story2 = false;
+                        ts.storyObj.SetActive(false);
+                        //myosa.SetActive(true);
+                        //state.isCat = true;
                     }
                 }
             }
@@ -153,12 +201,13 @@ public class GameManager : MonoBehaviour {
         {
             state.isAnime = true;
             StartCoroutine(bookscrap());
-        }else if(state.story2 && talkScript.talkCount == 4)
-        {
-            myosa.SetActive(true);
-            StartCoroutine(MoveCat());
-            state.story2 = false;
         }
+        //else if(state.story2 && talkScript.talkCount == 4)
+        //{
+        //    myosa.SetActive(true);
+        //    StartCoroutine(MoveCat());
+        //    state.story2 = false;
+        //}
         if (playerScript.isAnime && !StateManager.isStory)
         {
             Debug.Log("2" + StateManager.isStory);
@@ -223,16 +272,21 @@ public class GameManager : MonoBehaviour {
     IEnumerator bigDipperWaitTime()
     {
         state.story2 = false;
+        //ts.storyObj.SetActive(false);
         yield return new WaitForSeconds(3f);
         Destroy(bigDipper);
         state.story2 = true;
+        //Debug.Log(talkScript.talkCount);
+        //ts.storyObj.SetActive(true);
     }
 
     IEnumerator bookscrap()
     {
         state.story2 = false;
         npc2Anime.SetBool("isBookScrap", true);
+        //ts.storyObj.SetActive(false);
         yield return new WaitForSeconds(3f);
+        //ts.storyObj.SetActive(true);
         state.story2 = true;
         npc2Anime.SetBool("isBookScrap", false);
         

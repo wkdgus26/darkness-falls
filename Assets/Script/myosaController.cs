@@ -35,7 +35,7 @@ public class myosaController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (state.isCatFallow) { 
+		if (state.isCatFollow) { 
 			dis = Vector3.Distance(player.transform.position, this.transform.position);
 			if(dis < 1f)
 			{

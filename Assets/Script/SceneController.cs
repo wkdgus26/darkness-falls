@@ -20,11 +20,12 @@ public class SceneController : MonoBehaviour {
             list[n] = ("ch" + (n + 1) + "COF");
         }
         if (posScene > 1)
+        {
             fadeOut.SetActive(true);
+            fadeOutFalseCoroutine();
+        }
     }
     
-    
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (isChapEnd)
@@ -40,6 +41,10 @@ public class SceneController : MonoBehaviour {
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(list[posScene].ToString());
         posScene++;
-        
+    }
+    IEnumerator fadeOutFalseCoroutine()
+    {
+        yield return new WaitForSeconds(3f);
+        fadeOut.SetActive(false);
     }
 }
