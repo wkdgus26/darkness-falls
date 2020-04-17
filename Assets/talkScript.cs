@@ -8,8 +8,8 @@ public class talkScript : MonoBehaviour {
     public static string[] storyTalk1;
     public static string[] storyTalk2;
     public static string[] story2CatTalk;
-    //public static byte talkCount = 1;
-    public static byte talkCount = 0;
+    public static byte talkCount = 1;
+    //public static byte talkCount = 0;
     public GameObject storyObj;
     void Start()
     {

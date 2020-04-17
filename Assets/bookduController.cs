@@ -39,15 +39,15 @@ public class bookduController : MonoBehaviour {
 	{
 		isFade = true;
 		float atime = 0.4f;
-		int a = index;
+		int temp = index;
 
 		while (atime > 0)
 		{
 			atime -= Time.deltaTime;
-			bookdu[a].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, atime / 0.6f);
+			bookdu[temp].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, atime / 0.6f);
 			yield return null;
 		}
-		bookdu[a].SetActive(false);
+		bookdu[temp].SetActive(false);
 		isFade = false;
 	}
 }
