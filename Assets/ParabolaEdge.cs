@@ -14,10 +14,11 @@ public class ParabolaEdge : MonoBehaviour {
 	void Update () {
 		if (!paraCon[i].Animation)
 		{
+			paraCon[i].animationTime = 0; // 
 			paraCon[i].enabled = false;
 			paraCon[i].Animation = true;
-			paraCon[i].Autostart = true;
-			paraCon[i++].animationTime = 0; // 
+			paraCon[i++].Autostart = true;
+			
 
 			if (i == 4)
 				i = 0;
